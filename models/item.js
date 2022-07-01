@@ -7,7 +7,7 @@ const Schema = mongoose.Schema;
 /*========================================
         SCHEMAS
 ========================================*/
-const itemSchema = new Schema({
+const itemsSchema = new Schema({
 	title: {
 		type: String,
 		required: true,
@@ -27,4 +27,4 @@ const itemSchema = new Schema({
 	},
 });
 
-module.exports = mongoose.model('Item', itemSchema)
+module.exports = mongoose.model('Item', itemsSchema)
