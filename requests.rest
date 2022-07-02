@@ -1,0 +1,10 @@
+# WE CAN USE THIS FILE ALONG WITH REST CLIENT EXTENSION TO TEST ROUTES/API FETCH
+# USE 3 "###" to start a new request
+
+GET https://fakestoreapi.com/products
+
+###
+
+GET https://fakestoreapi.com/products/categories
+
+

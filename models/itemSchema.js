@@ -3,33 +3,37 @@
 ========================================*/
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const bcrypt = require('bcrypt');
 
 /*========================================
         SCHEMAS
 ========================================*/
-const usersSchema = new Schema(
+const itemsSchema = new Schema(
 	{
-		name: {
+		title: {
 			type: String,
 			required: true
 		},
-		email: {
+		price: {
+			type: Number,
+			required: true,
+			default: 0,
+		},
+		description: {
 			type: String,
-			unique: true,
-			trim: true,
-			lowercase: true,
 			required: true
 		},
-		password: {
+		image: {
 			type: String,
-			trim: true,
-			minLength: 3,
 			required: true
+		},
+		category: {
+			type: Schema.Types.ObjectId,
+			ref: 'Category'
 		},
 	},
 	{
 		timestamps: true
-	});
+	}
+);
 
-module.exports = mongoose.model('User', usersSchema)
+module.exports = itemsSchema;
