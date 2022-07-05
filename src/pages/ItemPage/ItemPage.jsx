@@ -17,11 +17,12 @@ export default function ItemPage(props) {
     const [ storeItems, setStoreItems ] = useState([])
     
     useEffect(() => {
-        (async () => {
+        const getStoreItems = async () => {
             const items = await ItemsApi.getAll()
             setStoreItems(items)
-        })()
-
+        }
+        getStoreItems()
+        console.log(storeItems);
     })
     
 
