@@ -41,5 +41,3 @@ db.on("open", () => {
         db.close()
     })
 })
-
-

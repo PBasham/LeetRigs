@@ -1,0 +1,11 @@
+.nav-bar {
+    display: flex;
+}
+
+.nav-btn {
+    justify-content: flex-start;
+}
+
+.cart {
+
+}
