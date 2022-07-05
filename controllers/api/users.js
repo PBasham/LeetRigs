@@ -1,7 +1,13 @@
+/*========================================
+        DEPENDENCIES
+========================================*/
 const User = require('../../models/user')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 
+/*========================================
+        USER FUNCTIONS
+========================================*/
 function checkToken(req, res) {
   console.log('req.user', req.user);
   res.json(req.exp)
@@ -41,4 +47,7 @@ function createJWT(user) {
   );
 }
 
+/*========================================
+        EXPORTS
+========================================*/
 module.exports = { create, login, checkToken }
