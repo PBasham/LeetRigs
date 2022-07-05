@@ -1,6 +1,7 @@
 :root {
     --color-neongreen: rgb(96, 194, 145);
     --color-accent: rgb(62, 228, 145);
+    --color-accenttwo: rgba(5, 114, 78, 0.97);
   }
 .nav-bar {
     display: flex;
@@ -27,13 +28,13 @@
 }
 
 .nav-btn:hover {
-    background-color: rgb(62, 228, 145);
-    box-shadow: 
-    inset 12px 0 10px -6px rgba(5, 114, 78, 0.97), 
-    inset -12px 0 10px -6px rgba(5, 114, 78, 0.97),
+    background-color: var(--color-neongreen);
+    box-shadow:
+    0 0 0 0 transparent, 
+    inset 12px 0 10px -6px var(--color-accenttwo), 
+    inset -12px 0 10px -6px var(--color-accenttwo),
     inset 0 -3.25em 0 0 var(--color-accent);
 }
-
 .cart {
     display: flex;
     justify-content: center;
@@ -41,16 +42,16 @@
     margin: 5px 0 5px 0;
     width: 40px;
     height: 40px;
-    border: 1px solid black;
     border-radius: 50%;
     background-color: white;
-    box-shadow: 0 0 3px 3px rgba(76, 143, 119, 0.533);
+    box-shadow: 0 0 3px 3px var(--color-accenttwo);
+    transition: 250ms ease-in;
 }
+.cart:hover {
+    box-shadow: 0 0 0 0 transparent,
+    inset 0 0 2px 2px var(--color-accenttwo);
+}
+
 .nav-btn.flex-end {
     margin-left: auto;
-}
-
-
-.cart:hover {
-    box-shadow: none;
 }
