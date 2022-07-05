@@ -36,7 +36,7 @@ export default function ItemPage(props) {
             </div>
             <div className="item-page-div">
                 Page Content
-                <ItemList items={items}/>
+                <ItemList storeItems={storeItems}/>
             </div>
         </div>
     )
