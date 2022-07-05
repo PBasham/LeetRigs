@@ -7,7 +7,8 @@ export default function SignUpFrom({ setUser }) {
   const [credentials, setCredentials] = useState({
     name: '',
     email: '',
-    password: ''
+    password: '',
+    error: ''
   });
   const [error, setError] = useState('');
 
