@@ -36,4 +36,7 @@ const itemsSchema = new Schema(
 	}
 );
 
+/*========================================
+				EXPORTS
+========================================*/
 module.exports = itemsSchema;

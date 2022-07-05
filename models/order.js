@@ -44,5 +44,7 @@ const ordersSchema = new Schema(
 	}
 );
 
-
+/*========================================
+				EXPORTS
+========================================*/
 module.exports = mongoose.model('Order', ordersSchema)

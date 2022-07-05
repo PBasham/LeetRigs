@@ -4,7 +4,7 @@
 require("dotenv").config()
 const { element } = require("prop-types")
 const mongoose = require("./config/database.js")
-// const fetch = require("node-fetch")
+const fetch = require("node-fetch");
 // require("./config/database.js")
 
 const Item = require("./models/item.js")
