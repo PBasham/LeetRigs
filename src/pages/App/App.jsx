@@ -16,9 +16,11 @@ import ItemPage from "../../pages/ItemPage/ItemPage.jsx"
 ========================================*/
 import './App.css';
 
-const [user, setUser] = useState(getUser())
 
 function App() {
+  
+  const [user, setUser] = useState(getUser())
+  
   return (
     <div className="App">
       <NavBar />
