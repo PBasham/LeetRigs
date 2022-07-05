@@ -32,4 +32,7 @@ const usersSchema = new Schema(
 		timestamps: true
 	});
 
+	/*========================================
+					EXPORTS
+	========================================*/
 module.exports = mongoose.model('User', usersSchema)
