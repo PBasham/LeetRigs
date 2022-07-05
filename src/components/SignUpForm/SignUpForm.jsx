@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {signUp} from '../../utilities/users-service'
 
 export default class SignUpForm extends Component{
 
