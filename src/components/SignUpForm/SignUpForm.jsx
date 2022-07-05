@@ -7,7 +7,6 @@ export default function SignUpForm({ setUser }) {
     name: '',
     email: '',
     password: '',
-    
   });
   const [error, setError] = useState('');
 
