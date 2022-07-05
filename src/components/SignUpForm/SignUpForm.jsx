@@ -1,25 +1,27 @@
 import {useState} from 'react'
-import { signUp } from '../../utilities/users-service'
 import * as usersService from '../../utilities/users-service';
 
 
-export default function SignUpFrom({ setUser }) {
+export default function SignUpForm({ setUser }) {
   const [credentials, setCredentials] = useState({
     name: '',
     email: '',
     password: '',
-    error: ''
   });
   const [error, setError] = useState('');
 
   function handleChange(evt) {
+    
     setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
     setError('');
+    
   }
+  
 
   async function handleSubmit(evt){
     // This prevents form from being submitted to the server
     evt.preventDefault();
+    console.log(credentials)
     try{
       const user = await usersService.signUp(credentials);
       setUser(user);
@@ -39,7 +41,7 @@ export default function SignUpFrom({ setUser }) {
           <label>Password</label>
           <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
           <label>Confirm</label>
-            <input type="confirm" name="confirm" value={credentials.confirm} required />
+            <input type="confirm" name="confirm"  required />
           <button type="submit">Sign Up</button>
         </form>
       </div>
