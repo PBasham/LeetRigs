@@ -1,8 +1,11 @@
 /*========================================
         import Depenedencies
 ========================================*/
+import { async } from "q";
 import { useState, useEffect, useRef } from "react";
 import ItemList from "../../components/ItemList/ItemList.jsx"
+import * as ItemsApi from "../../utilities/items-api.js"
+
 /*========================================
         Import css
 ========================================*/
@@ -11,7 +14,17 @@ import "./ItemPage.css"
 
 export default function ItemPage(props) {
 
-    // useEffect
+    const [ storeItems, setStoreItems ] = useState([])
+    
+    useEffect(() => {
+        const getStoreItems = async () => {
+            const items = await ItemsApi.getAll()
+            setStoreItems(items)
+        }
+        getStoreItems()
+        console.log(storeItems);
+    })
+    
 
 
     return (
@@ -24,7 +37,7 @@ export default function ItemPage(props) {
             </div>
             <div className="item-page-div">
                 Page Content
-                <ItemList />
+                <ItemList storeItems={storeItems}/>
             </div>
         </div>
     )

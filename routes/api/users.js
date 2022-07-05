@@ -17,3 +17,5 @@ router.post('/login', usersCtrl.login);
 
 // User get route for JWT token
 router.get('/check-token', ensureLoggedIn, usersCtrl.checkToken)
+
+module.exports = router
