@@ -2,29 +2,10 @@
         DEPENDENCIES
 ========================================*/
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
-/*========================================
-        SCHEMAS
-========================================*/
-const itemsSchema = new Schema({
-	title: {
-		type: String,
-		required: true,
-	},
-	price: {
-		type: Number,
-		required: true,
-		default: 0,
-	},
-	description: {
-		type: String,
-		required: true,
-	},
-	image: {
-		type: String,
-		required: true,
-	},
-});
+// Ensure that the Category model is loaded by Mongoose
+// so that it can be used to populate the items
+require('./category')
+const itemSchema = require('./itemSchema')
 
-module.exports = mongoose.model('Item', itemsSchema)
+module.exports = mongoose.model('Item', itemSchema)
