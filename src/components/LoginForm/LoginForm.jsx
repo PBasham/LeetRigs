@@ -15,7 +15,7 @@ export default function LoginFrom({ setUser }) {
 
   async function handleSubmit(evt){
     // This prevents form from being submitted to the server
-    evt.preventDegault();
+    evt.preventDefault();
     try{
       const user = await usersService.login(credentials);
       setUser(user);
@@ -28,7 +28,7 @@ export default function LoginFrom({ setUser }) {
     <div>
       <div className="form-container" onSubmit={handleSubmit}>
         <form autoComplete="off">
-          <lable>Email</lable>
+          <label>Email</label>
           <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
           <label>Password</label>
           <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
