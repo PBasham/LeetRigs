@@ -1,15 +1,19 @@
 .item-page-header {
     height: 400px;
     width: 100%;
-    background-color: blue;
 }
 .item-page-filterbtns {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     height: 50px;
+    background-color: var(--color-neongreen);
 }
+
+.filter-btn {
+    
+}
+
 .item-page-div {
     width: 100%;
-    background-color: red;
 }

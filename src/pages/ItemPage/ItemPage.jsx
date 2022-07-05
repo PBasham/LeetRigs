@@ -12,7 +12,7 @@ import "./ItemPage.css"
 export default function ItemPage(props) {
 
     return (
-        <>
+        <div className="item-page-div">
         <div className="item-page-header">
             Item Page Header Area
         </div>
@@ -22,7 +22,7 @@ export default function ItemPage(props) {
         <div className="item-page-div">
             Page Content
         </div>
-        </>
+        </div>
     )
 
 }
