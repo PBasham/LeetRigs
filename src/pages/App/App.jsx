@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-       {user ? <ItemPage /> : <AuthPage />}
+       {!user ? <ItemPage /> : <AuthPage />}
     </div>
   );
 }
