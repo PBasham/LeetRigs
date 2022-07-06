@@ -27,8 +27,8 @@ const [showItemDetail, setShowItemDetail] = useState(false)
 
 return (
 <div className="App">
-        { user ? <NavBar /> : null }
-        {showItemDetail ? <ItemDetail /> : null}
+        { user ? <NavBar setUser={setUser} /> : null }
+        {showItemDetail ? <ItemDetail setShowItemDetail={setShowItemDetail}/> : null}
         {user ?
                 <>
                 <Routes>
