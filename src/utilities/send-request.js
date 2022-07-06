@@ -1,5 +1,5 @@
 import { getToken } from "./users-service";
-const fetch = require("node-fetch");
+// const fetch = require("node-fetch");
 
 export default async function sendRequest(url, method = 'GET', payload = null) { 
   const options = { method };
@@ -18,7 +18,7 @@ export default async function sendRequest(url, method = 'GET', payload = null) {
     options.headers.Authorization = `Bearer ${token}`;
   }
   const res = await fetch(url, options);
-  // console.log(res)
+  console.log(res)
   
   if (res.ok) return res.json();
   throw new Error('Bad Request');
