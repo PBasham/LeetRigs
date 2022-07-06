@@ -1,13 +1,25 @@
 .item-page-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     height: 400px;
     width: 100%;
+    background-color: white;
 }
+
+.store-name {
+    font-size: 4em;
+}
+
 .item-page-filterbtns {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     height: 50px;
     background-color: var(--color-neongreen);
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
 }
 
 .filter-btn {
