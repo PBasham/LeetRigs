@@ -18,27 +18,6 @@ import './App.css';
 
 
 function App() {
-<<<<<<< HEAD
-  
-  const [user, setUser] = useState(getUser())
-  return (
-          <div className="App">
-                  {user ? 
-                  <>        
-                  <Routes>
-                                  <Route
-                                          path="/items"
-                                          element={<ItemPage
-                                          user={user}
-                                          setUser={setUser} />} />
-                                  </Routes>
-                                  
-                          </>
-                          :
-                          <AuthPage setUser={setUser} />}
-    </div>
-  );
-=======
 const [user, setUser] = useState(getUser())
 
 return (
@@ -55,7 +34,6 @@ return (
         <AuthPage setUser={setUser}/>}
 </div>
 );
->>>>>>> main
 }
 
 export default App;

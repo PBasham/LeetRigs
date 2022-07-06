@@ -22,11 +22,7 @@ export default function ItemPage(props) {
         }
         getStoreItems()
         console.log(storeItems);
-<<<<<<< HEAD
-    }, [])
-=======
     }, [storeItems])
->>>>>>> main
     
 
 
