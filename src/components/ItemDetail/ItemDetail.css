@@ -1,6 +1,6 @@
 .item-detail-container {
     display: flex;
-    justify-self: center;
+    justify-content: center;
     align-items: center;
     position: fixed;
     top: 0;
@@ -11,7 +11,7 @@
     z-index: 20;
 }
 .item-detail-card {
-    margin: 0 auto;
+    position: relative;
     padding: 50px 30px;
     width: 80%;
     height: 80%;
@@ -19,4 +19,27 @@
     border-radius: 30px;
     box-shadow: 0 0 10px 2px grey;
     z-index: 30;
+}
+
+.item-detail-close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+    background-color: var(--color-neongreen);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 1px grey;
+    transition: 250ms ease-in-out;
+}
+.item-detail-close-btn:hover {
+    color: white;
+    box-shadow: 0 0 5px 1px grey, inset 0 0 0 2em red;
+    /* background-color: red; */
 }
