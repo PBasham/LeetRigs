@@ -1,0 +1,13 @@
+.item-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--color-neongreen);
+}
+
+.item-container {
+  display: grid;
+  align-content: center;
+}
