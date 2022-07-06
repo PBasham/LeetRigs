@@ -1,4 +1,5 @@
 import ItemListItem from "../ItemListItem/ItemListItem.jsx"
+import "./ItemList.css"
 
 export default function ItemList({ storeItems }) {
     // return (
@@ -16,8 +17,8 @@ export default function ItemList({ storeItems }) {
         />
       );
       return (
-        <main className="item-List">
+        <div className="item-list-container">
           {items}
-        </main>
+        </div>
       );
 }

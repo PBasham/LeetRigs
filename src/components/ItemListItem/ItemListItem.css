@@ -1,13 +1,32 @@
 .item-card {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  background-color: var(--color-neongreen);
+  margin: 30px;
+  padding: 10px;
+  width: 250px;
+  min-height: 350px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 0 5px 1px rgb(153, 140, 108);
+  transition: 250ms ease-in;
+}
+.item-card:hover {
+  transform: scale(1.1);
+  
+
+}
+.item-title {
+  margin-top: 20px;
+  font-size: 1em;
 }
 
-.item-container {
-  display: grid;
-  align-content: center;
+.item-img {
+  margin: 20px auto;
+  padding: 10px;
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  box-shadow: 0 0 3px 1px gray;
+}
+
+.item-price {
+  text-align: left;
 }

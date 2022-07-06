@@ -27,13 +27,13 @@ export default function ItemPage(props) {
     return (
         <div className="item-page-div">
             <div className="item-page-header">
-                Item Page Header Area
+                <h1 className="store-name">StoreName</h1>
+                <h2 className="store-tagline">We got good clothing.</h2>
             </div>
             <div className="item-page-filterbtns">
 
             </div>
             <div className="item-page-div">
-                Page Content
                 <ItemList storeItems={storeItems}/>
             </div>
         </div>
