@@ -1,8 +1,9 @@
 import {useState} from 'react'
+import { Link } from "react-router-dom"
 import * as usersService from '../../utilities/users-service';
 
 
-export default function SignUpForm({ setUser }) {
+export default function SignUpForm({ setUser, updateShowLogin  }) {
   const [credentials, setCredentials] = useState({
     name: '',
     email: '',
@@ -17,7 +18,9 @@ export default function SignUpForm({ setUser }) {
     
   }
   
-
+  const handleFormChange = () => {
+    updateShowLogin()
+  }
   async function handleSubmit(evt){
     // This prevents form from being submitted to the server
     evt.preventDefault();
@@ -45,6 +48,7 @@ export default function SignUpForm({ setUser }) {
           <button type="submit">Sign Up</button>
         </form>
       </div>
+      <p>Already a user? <Link to="/Login" onClick={handleFormChange}>Log In</Link></p>
       <p className="error-message">&nbsp;{error}</p>
     </div>
   )

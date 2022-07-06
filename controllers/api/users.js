@@ -6,6 +6,15 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 
 /*========================================
+        EXPORTS
+========================================*/
+module.exports = {
+  create,
+  login,
+  checkToken
+}
+
+/*========================================
         USER FUNCTIONS
 ========================================*/
 function checkToken(req, res) {
@@ -25,12 +34,11 @@ async function login(req, res) {
   }
 }
 
-async function create(req, res) {
+async function create(req, res) {  
   try {
     const user = await User.create(req.body);
     const token = createJWT(user)
     res.json(token)
-    console.log(token)
   } catch (err) {
     res.status(400).json(err);
   }
@@ -47,8 +55,3 @@ function createJWT(user) {
     { expiresIn: '24hr' }
   );
 }
-
-/*========================================
-        EXPORTS
-========================================*/
-module.exports = { create, login, checkToken }
