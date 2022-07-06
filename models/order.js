@@ -24,6 +24,8 @@ const lineItemSchema = new Schema(
 	}
 );
 
+// order schema references the User ID currently logged in
+// lineItemsschema is embedded within orders
 const ordersSchema = new Schema(
 	{
 		user: {
@@ -44,6 +46,45 @@ const ordersSchema = new Schema(
 	}
 );
 
+// "extPrice" is the virtual being created, "this" refers to it.
+lineItemSchema.virtual('extPrice').get(function () {
+	return this.qty * this.item.price
+})
+
+// Creating virtual properties on the ordersSchema "orderTotal, totalQty, etc."
+// reduce takes an array of values and reduces to one single value(item)
+// first param = accumulator(total), second param = (item) looping thru each individual item, total is 0 to start
+// This virtual keeps track of the order total for a specified order
+ordersSchema.virtual('orderTotal').get(function() {
+	return this.lineItems.reduce((total, item) => total + item.extPrice, 0)
+})
+
+// This virtual keeps track of the total qty for a lineitem in the specified order
+ordersSchema.virtual('totalQty').get(function () {
+	return this.lineItems.reduce((total, item) => total + item.qty, 0)
+})
+
+// This virtual is slicing the orderID and converting to uppercase, don't understand why yet? will revisit
+ordersSchema.virtual('orderId').get(function () {
+	return this.id.slice(-6).toUpperCase();
+})
+
+// You add a static function to your schema, and Mongoose attaches it to any model you compile with that schema.
+ordersSchema.statics.getCart = function(userId) {
+	// 'this' is the Order model itself, 'user' is pulling from the schema property
+	return this.findOneAndUpdate(
+		{ user: userId, isPaid: false },
+		// Above is what we query for
+		{ user: userId },
+		// data for the order contained in userId param
+		{ upsert: true, new: true }
+		// upsert creates object if doesn't exist
+	)
+		
+		
+}
+	
+	
 /*========================================
 				EXPORTS
 ========================================*/
