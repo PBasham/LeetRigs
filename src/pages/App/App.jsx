@@ -10,6 +10,7 @@ Import Pages
 import NavBar from '../../components/NavBar/NavBar';
 import AuthPage from "../../pages/AuthPage/AuthPage.jsx"
 import ItemPage from "../../pages/ItemPage/ItemPage.jsx"
+import CheckoutPage from '../CheckoutPage/CheckoutPage';
 
 /*========================================
         import css
@@ -26,8 +27,9 @@ return (
         {user ?
                 <>
                 <Routes>
-                <Route path="/items" element={<ItemPage />} />
-                <Route path="/*" element={<Navigate to="/items" />} />
+                        <Route path="/items" element={<ItemPage />} />
+                        <Route path="/*" element={<Navigate to="/items" />} />
+                        <Route path="/checkout" element={<CheckoutPage />} />
                 </Routes>
                 </>
         :
