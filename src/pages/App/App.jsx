@@ -20,11 +20,21 @@ import './App.css';
 function App() {
   
   const [user, setUser] = useState(getUser())
-  
   return (
-    <div className="App">
-      <NavBar />
-       {user ? <ItemPage /> : <AuthPage />}
+          <div className="App">
+                  {user ? 
+                  <>        
+                  <Routes>
+                                  <Route
+                                          path="/items"
+                                          element={<ItemPage
+                                          user={user}
+                                          setUser={setUser} />} />
+                                  </Routes>
+                                  
+                          </>
+                          :
+                          <AuthPage />}
     </div>
   );
 }

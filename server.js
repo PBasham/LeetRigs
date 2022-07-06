@@ -6,7 +6,7 @@ const path = require("path")
 const favicon = require("serve-favicon")
 const logger = require("morgan")
 
-require("dotenv").config()
+require('dotenv').config()
 require("./config/database")
 
 /*========================================
@@ -20,18 +20,26 @@ app.use(express.json())
 app.use(favicon(path.join(__dirname, "build", "favicon.ico")))
 app.use(express.static(path.join(__dirname, "build")))
 
+// Middleware to verify token and assign user object of payload to req.user.
+// Be sure to mount before routes
 // checkToken will go here
-
+app.use(require('./config/checkToken'));
 /*========================================
         API routes will go here
 ========================================*/
-/// user apu first 
+// Put API routes here, before the "catch all" route
+app.use('/api/users', require('./routes/api/users'));
 
 // ensure logged in middleware will go here.
+// Protect the api routes below from anonymous users
+const ensureLoggedIn = require('./config/ensureLoggedIn');
+app.use('/api/items', ensureLoggedIn, require('./routes/api/items'));
 // all othe APIs
 
 // catch all route that will return the index.html on all non-AJAX request.
-
+app.get('/*', function(req, res) {
+        res.sendFile(path.join(__dirname, 'build', 'index.html'));
+      });
 /*========================================
         Port and Listener
 ========================================*/
