@@ -9,9 +9,9 @@ const purchaseCtrl = require('../../controllers/api/orders')
 // route location, then reference function in controller that's needed
 router.get('/mycart', purchaseCtrl.userCart)
 // POST /api/purchases/mycart/items/:id
-router.post("/mycart/items/:id", purchaseCtrl.addToCart)
+router.post('/mycart/items/:id', purchaseCtrl.addToCart)
 // PUT /api/purchases/mycart/qty
-router.put('/mycart/qty', purchaseCtrl.updateCartQty)
+router.put('/mycart/qty', purchaseCtrl.updateItemQtyCart)
 
 
 
