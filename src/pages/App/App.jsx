@@ -4,6 +4,7 @@
 import React, { useState } from 'react';
 import { Routes, Route, Navigate } from "react-router-dom"
 import { getUser } from '../../utilities/users-service';
+
 /*========================================
 Import Pages
 ========================================*/
@@ -23,7 +24,8 @@ function App() {
 
 const [user, setUser] = useState(getUser())
 
-const [showItemDetail, setShowItemDetail] = useState(false)
+        const [showItemDetail, setShowItemDetail] = useState(false)
+        
 
 return (
 <div className="App">
@@ -32,9 +34,9 @@ return (
         {user ?
                 <>
                 <Routes>
-                        <Route path="/items" element={<ItemPage setShowItemDetail={setShowItemDetail}/>} />
+                        <Route path="/items" element={<ItemPage setShowItemDetail={setShowItemDetail} />} />
                         <Route path="/*" element={<Navigate to="/items" />} />
-                        <Route path="/checkout" element={<CheckoutPage />} />
+                        <Route path="/checkout" element={<CheckoutPage  />} />
                 </Routes>
                 </>
         :
