@@ -19,7 +19,6 @@ return (
     <div className="checkout-page-div">
         <h1>CheckOut</h1>
         <div className="checkout-order">
-            CheckOut Items
             <CheckoutArea cart={cart} setCart={setCart}/>
         </div>
 
