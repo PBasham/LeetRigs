@@ -97,8 +97,20 @@ ordersSchema.methods.addItemToCart = async function (storeItemId) {
 	// set a keywork for the unpaid order (cart)
 	const cart = this
 
+	// try to find the lineItem by id that was sent it through the req.params
+	const lineItem = cart.lineItems.find((lineItem) => lineItem.item._id.equals(storeItemId))
 
+	// check if the lineItem exist
+	if (lineItem) {
+		lineItem.qty =+ 1
+	} else {
+		// if it does not exist in the cart, get the items from the Item model using the req.params as the reference for the _id
+		const item = await mongoose.model("Item").findById(storeItemId)
 
+		// add this item to the lineItems array within this cart.
+		cart.lineItems.push({ item })
+	}
+	return cart.save()
 }
 	
 /*========================================

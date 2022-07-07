@@ -25,6 +25,6 @@ async function userCart(req, res) {
 async function addToCart(req, res) {
         const userCart = await Order.findCart(req.user._id)
         await cart.addItemToCart(req.params.id)
-
+        
 }
 
