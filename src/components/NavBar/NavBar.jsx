@@ -51,15 +51,14 @@ export default function NavBar({ user, setUser }) {
                 to="/Home"
                 element={<ItemPage />}
                 onClick={homeClicked}
+                className="nav-bar-linkbtn"
                 >
-                <button
-                    className="nav-btn flex-start">
+                <button className="nav-btn flex-start">
                     Home
                 </button>
             </Link>
             :
-                <button
-                    className="nav-btn flex-start nav-btn-active">
+                <button className="nav-btn flex-start nav-btn-active">
                     Home
                 </button>
             }
@@ -68,9 +67,26 @@ export default function NavBar({ user, setUser }) {
             <button className="nav-btn flex-start">Order History</button>
 
             <div className="flex-end">
+                {/* This is the Log Out Button */}
                 <UserLogOut user={user} setUser={setUser} />
-                <button className="nav-btn">LogOut</button>
-                <Link to="/checkout" element={<CheckoutPage />}><button className="nav-btn cart">Cart</button></Link>
+
+                { !checkoutPageActive ?
+                    <Link 
+                        to="/checkout" 
+                        element={<CheckoutPage />}
+                        onClick={checkoutPageClicked}
+                        >
+                        <button 
+                            className="nav-btn cart">
+                            Cart
+                        </button>
+                    </Link>
+                    :
+                    <button 
+                        className="nav-btn cart nav-btn-active">
+                        Cart
+                    </button>
+                }
             </div>
         </div>
     )

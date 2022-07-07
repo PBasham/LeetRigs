@@ -1,4 +1,11 @@
+/*========================================
+        import dependencies
+========================================*/
 import { logOut } from '../../utilities/users-service'
+/*========================================
+        import css
+========================================*/
+
 
 export default function UserLogOut({ user, setUser }) {
   function handleLogOut(){
@@ -9,7 +16,7 @@ export default function UserLogOut({ user, setUser }) {
   return (
     <div className="UserLogOut">
   
-      <button className="btn-sm" onClick={handleLogOut}>LOG OUT</button>
+      <button className="nav-btn" onClick={handleLogOut}>LOG OUT</button>
     </div>
   )
 }
