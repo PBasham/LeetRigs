@@ -1,7 +1,7 @@
 /*========================================
         import dependencies
 ========================================*/
-// import * as OrderApi from "../../utilities/orders-api.js"
+import * as OrderApi from "../../utilities/orders-api.js"
 
 /*========================================
         Import Css
@@ -14,6 +14,12 @@ export default function ItemDetail({ setShowItemDetail, itemDetail }) {
         setShowItemDetail(false);
     }
 
+    /*========================================
+            functions
+    ========================================*/
+    const handleClick = () => {
+        OrderApi.addToCart(itemDetail)
+    }
 
 
     return (
@@ -28,7 +34,7 @@ export default function ItemDetail({ setShowItemDetail, itemDetail }) {
                         <p className="item-detail-price">Price: ${itemDetail.price}</p>
                     </div>
                     <div className="flex-end">
-                        <button className="btn-add" >Add To Cart</button>
+                        <button className="btn-add" onClick={handleClick}>Add To Cart</button>
                     </div>
                 </div>
             </div>
