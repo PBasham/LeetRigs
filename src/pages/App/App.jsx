@@ -25,7 +25,15 @@ function App() {
 const [user, setUser] = useState(getUser())
 
         const [showItemDetail, setShowItemDetail] = useState(false)
+        const [itemDetail, setItemDetail] = useState({})
         
+        /*========================================
+                functions
+        ========================================*/
+        // const getItemDetailInfo = (storeItem) => {
+        //         setItemDetail(storeItem)
+        // }
+
 
 return (
 <div className="App">
@@ -34,7 +42,7 @@ return (
         {user ?
                 <>
                 <Routes>
-                        <Route path="/items" element={<ItemPage setShowItemDetail={setShowItemDetail} />} />
+                        <Route path="/items" element={<ItemPage setShowItemDetail={setShowItemDetail} setItemDetail={setItemDetail} />} />
                         <Route path="/*" element={<Navigate to="/items" />} />
                         <Route path="/checkout" element={<CheckoutPage  />} />
                 </Routes>

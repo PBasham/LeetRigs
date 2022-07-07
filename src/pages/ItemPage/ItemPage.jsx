@@ -11,7 +11,7 @@ import * as ItemsApi from "../../utilities/items-api.js"
 import "../../index.css"
 import "./ItemPage.css"
 
-export default function ItemPage({ setShowItemDetail }) {
+export default function ItemPage({ setShowItemDetail, setItemDetail }) {
 
     const [ storeItems, setStoreItems ] = useState([])
     
@@ -34,7 +34,7 @@ export default function ItemPage({ setShowItemDetail }) {
 
             </div>
             <div className="item-page-div">
-                <ItemList storeItems={storeItems} setShowItemDetail={setShowItemDetail}/>
+                <ItemList storeItems={storeItems} setShowItemDetail={setShowItemDetail} setItemDetail={setItemDetail}/>
             </div>
         </div>
     )

@@ -1,7 +1,7 @@
 import ItemListItem from "../ItemListItem/ItemListItem.jsx"
 import "./ItemList.css"
 
-export default function ItemList({ storeItems, setShowItemDetail }) {
+export default function ItemList({ storeItems, setShowItemDetail, setItemDetail }) {
     // return (
     //     <div className="item-List">
     //         {storeItems.map((t, index) => {
@@ -15,6 +15,7 @@ export default function ItemList({ storeItems, setShowItemDetail }) {
           key={item._id}
           storeItem={item}
           setShowItemDetail={setShowItemDetail}
+          setItemDetail={setItemDetail}
         />
       );
       return (
