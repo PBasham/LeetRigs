@@ -19,7 +19,9 @@ a {
     text-decoration: none;
 }
 
-
+/*----------------------------------------
+        Button Styling
+-----------------------------------------*/
 .nav-btn {
     width: 100px;
     padding: 5px;
@@ -65,4 +67,15 @@ a {
     margin-left: auto;
 }
 
-
+.nav-btn-active {
+    background-color:var(--color-neongreen);
+    box-shadow:
+    0 0 0 0 transparent, 
+    inset 12px 0 10px -6px var(--color-accenttwo), 
+    inset -12px 0 10px -6px var(--color-accenttwo),
+    inset 0 -3.25em 0 0 var(--color-accent);
+    /* transition: none; */
+}
+/* .nav-btn-active:hover {
+    
+} */
