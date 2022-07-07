@@ -112,6 +112,9 @@ ordersSchema.methods.addItemToCart = async function (storeItemId) {
 	}
 	return cart.save()
 }
+
+// Update Item QTY
+// ordersSchema.methods.updateItemQty = function()
 	
 /*========================================
 				EXPORTS
