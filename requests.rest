@@ -33,5 +33,9 @@ Content-Type: application/json
   "password": "test"
 }
 
+###
+
+GET http://localhost:3001/api/purchases/mycart/
+
 
 

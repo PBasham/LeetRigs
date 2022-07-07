@@ -3,11 +3,12 @@
 ========================================*/
 import "./ItemListItem.css"
 
-export default function ItemListItem({ storeItem, setShowItemDetail }) {
+export default function ItemListItem({ storeItem, setShowItemDetail, setItemDetail }) {
     // when an itemcard is clicked send the current information to the ItemDetail component
     const handleClick = () => {
         // set display of item-detail to block or something.
         setShowItemDetail(true)
+        setItemDetail(storeItem)
         console.log(`I've been clicked: ${storeItem._id}`)
     }
 

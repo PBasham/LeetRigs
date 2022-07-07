@@ -46,6 +46,9 @@ const ordersSchema = new Schema(
 	}
 );
 
+/*========================================
+		Model virtuals
+========================================*/
 // "extPrice" is the virtual being created, "this" refers to it.
 lineItemSchema.virtual('extPrice').get(function () {
 	return this.qty * this.item.price
@@ -69,6 +72,9 @@ ordersSchema.virtual('orderId').get(function () {
 	return this.id.slice(-6).toUpperCase();
 })
 
+/*========================================
+		Model Statics
+========================================*/
 // You add a static function to your schema, and Mongoose attaches it to any model you compile with that schema.
 ordersSchema.statics.findCart = function(userId) {
 	// 'this' is the Order model itself, 'user' is pulling from the schema property
@@ -83,8 +89,48 @@ ordersSchema.statics.findCart = function(userId) {
 		
 		
 }
-	
-	
+
+/*========================================
+		Model Methods
+========================================*/
+ordersSchema.methods.addItemToCart = async function (storeItemId) {
+	// set a keywork for the unpaid order (cart)
+	const cart = this
+
+	// try to find the lineItem by id that was sent it through the req.params
+	const lineItem = cart.lineItems.find((lineItem) => lineItem.item._id.equals(storeItemId))
+
+	// check if the lineItem exist
+	if (lineItem) {
+		lineItem.qty =+ 1
+	} else {
+		// if it does not exist in the cart, get the items from the Item model using the req.params as the reference for the _id
+		const item = await mongoose.model("Item").findById(storeItemId)
+
+		// add this item to the lineItems array within this cart.
+		cart.lineItems.push({ item })
+	}
+	return cart.save()
+}
+
+// Update Item QTY
+ordersSchema.methods.updateItemQty = function (selectedItem, newItemQty) {
+	const cart = this;
+	// this is bound to the current cart order
+	const lineItem = cart.lineItems.find(lineItem => lineItem.item._id.equals(selectedItem));
+	// find line item in cart for specific order item
+	if (lineItem && newItemQty <= 0) {
+		// Remove item from the cart lineItems array
+		lineItem.remove();
+	} else if (lineItem) {
+		// Set new qty if qty is not already 0
+		lineItem.qty = newItemQty
+	}
+	// save
+	return cart.save();
+	}
+
+
 /*========================================
 				EXPORTS
 ========================================*/
