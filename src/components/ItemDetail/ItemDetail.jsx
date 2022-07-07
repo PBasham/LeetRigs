@@ -1,7 +1,7 @@
 /*========================================
         import dependencies
 ========================================*/
-import * as OrderApi from "../../utilities/orders-api.js"
+// import * as OrderApi from "../../utilities/orders-api.js"
 
 /*========================================
         Import Css
@@ -13,15 +13,24 @@ export default function ItemDetail({ setShowItemDetail, itemDetail }) {
     const leaveDetailWindow = (e) => {
         setShowItemDetail(false);
     }
-    
+
 
 
     return (
         <div className="item-detail-container">
             <div className="item-detail-card">
                 <button className="item-detail-close-btn" onClick={leaveDetailWindow}>X</button>
-                item-Detail
-                <button className="addToCardBtn" >Add To Cart</button>
+                <h3 className="item-detail-name">{itemDetail.title}</h3>
+                    <img className="item-detail-img" src={itemDetail.image}></img>
+                <p className="item-detail-desc">{itemDetail.description}</p>
+                <div className="info">
+                    <div className="flex-start">
+                        <p className="item-detail-price">Price: ${itemDetail.price}</p>
+                    </div>
+                    <div className="flex-end">
+                        <button className="btn-add" >Add To Cart</button>
+                    </div>
+                </div>
             </div>
         </div>
     )

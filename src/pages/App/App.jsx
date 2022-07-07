@@ -25,7 +25,7 @@ function App() {
 const [user, setUser] = useState(getUser())
 
         const [showItemDetail, setShowItemDetail] = useState(false)
-        const [itemDetail, setItemDetail] = useState({})
+        const [ itemDetail, setItemDetail] = useState()
         
         /*========================================
                 functions
@@ -38,7 +38,7 @@ const [user, setUser] = useState(getUser())
 return (
 <div className="App">
         { user ? <NavBar setUser={setUser} /> : null }
-        {showItemDetail ? <ItemDetail setShowItemDetail={setShowItemDetail}/> : null}
+        {showItemDetail ? <ItemDetail setShowItemDetail={setShowItemDetail} itemDetail={itemDetail}/> : null}
         {user ?
                 <>
                 <Routes>
