@@ -5,7 +5,7 @@ import * as OrderApi from "../../utilities/orders-api.js"
 
 export default function CheckoutPage({ user, setUser }) {
 
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState(null)
     
     useEffect(function() {
         (async function getUserCart(){
@@ -22,8 +22,7 @@ return (
             <CheckoutArea
                 cart={cart}
                 setCart={setCart}
-                user={user}
-                setUser={setUser}/>
+                />
         </div>
 
     </div>
