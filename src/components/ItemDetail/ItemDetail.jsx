@@ -8,7 +8,7 @@ import * as OrderApi from "../../utilities/orders-api.js"
 ========================================*/
 import "./ItemDetail.css"
 
-export default function ItemDetail({ setShowItemDetail, itemDetail }) {
+export default function ItemDetail({ setShowItemDetail, itemDetail, cart, setCart }) {
 
     const leaveDetailWindow = (e) => {
         setShowItemDetail(false);
@@ -18,8 +18,14 @@ export default function ItemDetail({ setShowItemDetail, itemDetail }) {
             functions
     ========================================*/
     const handleClick = () => {
-        OrderApi.addToCart(itemDetail)
+        const activeCart = OrderApi.addToCart(itemDetail._id)
+        { console.log(activeCart) }
     }
+
+    // async function handleAddToCart(itemId) {
+    //     const activeCart = await OrderApi.addToCart(itemId)
+    //     setCart(activeCart)
+    //     }
 
 
     return (

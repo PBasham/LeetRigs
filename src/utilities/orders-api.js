@@ -18,7 +18,7 @@ export function findCart() {
 }
 // Add the selected item as a line item to the current unpaid order.
 export function addToCart(itemId) {
-  return sendRequest(`${BASE_URL}/mycart/items/${itemId}, "POST" `)
+  return sendRequest(`${BASE_URL}/mycart/items/${itemId}`, 'POST')
 }
 
 // Update the quantity for the selected item within the unpaid order (cart)
