@@ -3,9 +3,11 @@
   padding: 10px;
   width: 250px;
   min-height: 350px;
-  background-color: white;
+  color: #2A2b2dff;
+  background-color: #2DA8D8FF;
+  background: linear-gradient(to top right, #b3e5f9, #fff8af);
   border-radius: 15px;
-  box-shadow: 0 0 5px 1px rgb(153, 140, 108);
+  box-shadow: 0 0 5px 1px rgb(159, 159, 159);
   transition: 250ms ease-in;
 }
 .item-card:hover {

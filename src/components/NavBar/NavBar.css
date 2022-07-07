@@ -1,7 +1,10 @@
 :root {
-    --color-neongreen: rgb(96, 194, 145);
-    --color-accent: rgb(62, 228, 145);
-    --color-accenttwo: rgba(5, 114, 78, 0.97);
+    /* --color-neongreen: rgb(96, 194, 145); */
+    --color-neongreen: rgb(255, 249, 187);
+    /* --color-accent: rgb(62, 228, 145); */
+    --color-accent: rgb(250, 236, 151);
+    /* --color-accenttwo: rgba(5, 114, 78, 0.97); */
+    --color-accenttwo: rgba(207, 187, 105, 0.97);
   }
 
 
@@ -13,6 +16,7 @@
     width: 100%;
     height: 50px;
     background-color: var(--color-neongreen);
+    box-shadow: 0 0 5px 1px black;
 }
 
 a {

@@ -63,7 +63,6 @@ export default function NavBar({ user, setUser }) {
                 </button>
             }
 
-
             <button className="nav-btn flex-start">Order History</button>
 
             <div className="flex-end">

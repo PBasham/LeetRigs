@@ -5,11 +5,15 @@
     flex-direction: column;
     height: 400px;
     width: 100%;
-    background-color: white;
+    /* color: #2DA8D8FF; */
+    /* background-color: rgb(185, 200, 230); */
+    background: linear-gradient(to bottom right, rgb(185, 200, 230) 50%, #237a92);
+    box-shadow: inset 0 0 5px 1px black;
 }
 
 .store-name {
     font-size: 4em;
+    font-family: 'Galada', cursive;
 }
 
 .item-page-filterbtns {
@@ -18,8 +22,6 @@
     align-items: center;
     height: 50px;
     background-color: var(--color-neongreen);
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
 }
 
 .filter-btn {
@@ -27,5 +29,9 @@
 }
 
 .item-page-div {
+    position: relative;
     width: 100%;
+    background-color: rgb(185, 200, 230);
+    /* background: linear-gradient(to right, #b7e5f2, rgb(185, 200, 230) 30%, #b7e5f2 140%); */
+    box-shadow: inset 0 0 5px 1px black;
 }

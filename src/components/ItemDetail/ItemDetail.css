@@ -36,7 +36,7 @@
     border: none;
     border-radius: 50%;
     box-shadow: 0 0 5px 1px grey;
-    transition: 250ms ease-in-out;
+    transition: 500ms ease-in-out;
 }
 .item-detail-close-btn:hover {
     color: white;

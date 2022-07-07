@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');
+/* font-family: 'Galada', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap');
+/* font-family: 'Sansita Swashed', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap');
+/* font-family: 'Syncopate', sans-serif; */
+
 :root {
   --color-neongreen: rgb(96, 194, 145);
 }
@@ -11,5 +18,9 @@
 
 body {
   text-align: center;
-  background-color: rgb(244, 231, 169);
+  background: linear-gradient(to bottom right, rgb(185, 200, 230) 50%, #237a92);
+}
+
+.nav-btn {
+  color: #2A2b2dff;
 }
