@@ -16,3 +16,6 @@ export function findCart() {
   return sendRequest(`${BASE_URL}/mycart`)
 }
 
+export function addToCart(itemId) {
+  return sendRequest(`${BASE_URL}/mycart/items/${itemId}, "POST" `)
+}
