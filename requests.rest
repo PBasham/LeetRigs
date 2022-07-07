@@ -7,4 +7,31 @@ GET https://fakestoreapi.com/products
 
 GET https://fakestoreapi.com/products/categories
 
+###
+
+GET http://localhost:3001/api/items
+
+###
+
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+  "name": "Daniel",
+  "email": "daniel@gmail.com",
+  "password": "test"
+}
+
+###
+
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+  "name": "Patrick",
+  "email": "patrick@gmail.com",
+  "password": "test"
+}
+
+
 

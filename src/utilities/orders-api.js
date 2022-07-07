@@ -1,8 +1,18 @@
+/*========================================
+        DEPENDENCIES
+========================================*/
+// REUSABLE FETCH FUNCTION FOR GET, POST, ETC.
 import sendRequest from './send-request'
 
-const BASE_URL = '/api/orders'
+/*========================================
+        BASE URL
+========================================*/
+const BASE_URL = '/api/purchases'
 
-export function getCart() {
-  return sendRequest(`${BASE_URL}/checkout`)
+/*========================================
+        ROUTE REQUESTS
+========================================*/
+export function findCart() {
+  return sendRequest(`${BASE_URL}/mycart`)
 }
 

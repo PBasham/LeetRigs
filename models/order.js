@@ -70,7 +70,7 @@ ordersSchema.virtual('orderId').get(function () {
 })
 
 // You add a static function to your schema, and Mongoose attaches it to any model you compile with that schema.
-ordersSchema.statics.getCart = function(userId) {
+ordersSchema.statics.findCart = function(userId) {
 	// 'this' is the Order model itself, 'user' is pulling from the schema property
 	return this.findOneAndUpdate(
 		{ user: userId, isPaid: false },
