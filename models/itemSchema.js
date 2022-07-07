@@ -28,7 +28,7 @@ const itemsSchema = new Schema(
 		},
 		category: {
 			type: String,
-			// ref: 'Category'
+			ref: 'Category'
 		},
 	},
 	{

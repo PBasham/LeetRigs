@@ -44,7 +44,7 @@ return (
                 <Routes>
                         <Route path="/items" element={<ItemPage setShowItemDetail={setShowItemDetail} setItemDetail={setItemDetail} />} />
                         <Route path="/*" element={<Navigate to="/items" />} />
-                        <Route path="/checkout" element={<CheckoutPage  />} />
+                        <Route path="/checkout" element={<CheckoutPage user={user} setUser={setUser} />} />
                 </Routes>
                 </>
         :

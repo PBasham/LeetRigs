@@ -98,17 +98,20 @@ ordersSchema.methods.addItemToCart = async function (storeItemId) {
 	const cart = this
 
 	// try to find the lineItem by id that was sent it through the req.params
-	const lineItem = cart.lineItems.find((lineItem) => lineItem.item._id.equals(storeItemId))
-
+	const lineItem = cart.lineItems.find(lineItem => lineItem.item._id.equals(storeItemId))
+	// console.log(lineItem)
 	// check if the lineItem exist
 	if (lineItem) {
-		lineItem.qty =+ 1
+		console.log("I exist")
+		lineItem.qty += 1
 	} else {
+		console.log("I don't exist")
 		// if it does not exist in the cart, get the items from the Item model using the req.params as the reference for the _id
 		const item = await mongoose.model("Item").findById(storeItemId)
-
+			console.log(item)
 		// add this item to the lineItems array within this cart.
-		cart.lineItems.push({ item })
+		 cart.lineItems.push({ item })
+		
 	}
 	return cart.save()
 }

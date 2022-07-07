@@ -1,4 +1,7 @@
-export default function CheckoutArea({ cart, setCart }) {
+export default function CheckoutArea({ cart, setCart, handleAddToOrder, user }) {
+
+  <h1>Checkout Area</h1>
+
   return (
     <div className="checkout">
       <h1>My Cart</h1>

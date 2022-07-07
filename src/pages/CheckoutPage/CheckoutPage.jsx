@@ -3,7 +3,7 @@ import CheckoutArea from "../../components/CheckoutArea/CheckoutArea";
 import * as OrderApi from "../../utilities/orders-api.js"
 
 
-export default function CheckoutPage() {
+export default function CheckoutPage({ user, setUser }) {
 
     const [cart, setCart] = useState([])
     
@@ -19,7 +19,11 @@ return (
     <div className="checkout-page-div">
         <h1>CheckOut</h1>
         <div className="checkout-order">
-            <CheckoutArea cart={cart} setCart={setCart}/>
+            <CheckoutArea
+                cart={cart}
+                setCart={setCart}
+                user={user}
+                setUser={setUser}/>
         </div>
 
     </div>
