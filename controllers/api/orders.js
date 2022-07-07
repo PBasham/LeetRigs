@@ -7,7 +7,8 @@ const Order = require('../../models/order')
         EXPORTS
 ========================================*/
 module.exports = {
-  userCart
+        userCart,
+        addToCart
 }
 
 
@@ -28,3 +29,7 @@ async function addToCart(req, res) {
         res.json(userCart)
 }
 
+async function updateCartQty(req, res) {
+        const userCart = await Order.findCart(req.user._id)
+       
+}
