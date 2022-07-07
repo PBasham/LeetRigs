@@ -46,6 +46,9 @@ const ordersSchema = new Schema(
 	}
 );
 
+/*========================================
+		Model virtuals
+========================================*/
 // "extPrice" is the virtual being created, "this" refers to it.
 lineItemSchema.virtual('extPrice').get(function () {
 	return this.qty * this.item.price
@@ -69,6 +72,9 @@ ordersSchema.virtual('orderId').get(function () {
 	return this.id.slice(-6).toUpperCase();
 })
 
+/*========================================
+		Model Statics
+========================================*/
 // You add a static function to your schema, and Mongoose attaches it to any model you compile with that schema.
 ordersSchema.statics.findCart = function(userId) {
 	// 'this' is the Order model itself, 'user' is pulling from the schema property
@@ -83,7 +89,17 @@ ordersSchema.statics.findCart = function(userId) {
 		
 		
 }
-	
+
+/*========================================
+		Model Methods
+========================================*/
+ordersSchema.methods.addItemToCart = async function (storeItemId) {
+	// set a keywork for the unpaid order (cart)
+	const cart = this
+
+
+
+}
 	
 /*========================================
 				EXPORTS
