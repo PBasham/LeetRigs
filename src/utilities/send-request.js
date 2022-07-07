@@ -1,5 +1,4 @@
 import { getToken } from "./users-service";
-// const fetch = require("node-fetch");
 
 export default async function sendRequest(url, method = 'GET', payload = null) { 
   const options = { method };

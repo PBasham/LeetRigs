@@ -9,6 +9,7 @@ const itemsCtrl = require('../../controllers/api/items')
         ROUTES
 ========================================*/
 // Index Route
+// /api/items 
 router.get('/', itemsCtrl.index);
 
 // Show route
