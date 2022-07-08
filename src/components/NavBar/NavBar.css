@@ -56,15 +56,20 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px 0 5px 5px;
+    margin: 5px 15px 5px 0;
+    padding: 2px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: white;
+    background: url(https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/322/shopping-cart_1f6d2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 65%;
     box-shadow: 0 0 3px 3px var(--color-navBtnShadow);
     transition: 250ms ease-in;
 }
 .cart:hover {
+    background-color: var(--color-navBtnAccent);
     box-shadow: 0 0 0 0 transparent,
     inset 0 0 2px 2px var(--color-navBtnShadow);
 }

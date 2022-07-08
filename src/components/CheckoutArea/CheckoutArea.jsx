@@ -1,10 +1,18 @@
+/*========================================
+        import dependencies
+========================================*/
 import CartLineItem from "../CartLineItems/CartLineItems"
 import * as OrderApi from '../../utilities/orders-api'
-
+import { useNavigate } from "react-router-dom";
+/*========================================
+import css
+========================================*/
 import "..//CartLineItems/CartLineItems.css"
-import { async } from "q";
 
 export default function CheckoutArea({ cart, setCart }) {
+  
+  const navigate = useNavigate()
+  
   if (!cart) return null
   /*========================================
           Functions
@@ -12,6 +20,11 @@ export default function CheckoutArea({ cart, setCart }) {
   const handleChangeQty = async (itemId, newQty) => {
     const updatedCart = await OrderApi.updateCart(itemId, newQty)
       setCart(updatedCart)
+  }
+
+  const handleCheckout = async () => {
+    await OrderApi.checkoutCart()
+    navigate("/orders")
   }
   //==== end functions ====//
 
@@ -36,6 +49,7 @@ export default function CheckoutArea({ cart, setCart }) {
           {lineItems.length ?
             <div className="checkout-cart">
               {lineItems}
+              <button onClick={handleCheckout} className="checkout-btn">Checkout</button>
             </div>
             :
             <div>No items in cart</div>
