@@ -117,19 +117,20 @@ ordersSchema.methods.addItemToCart = async function (storeItemId) {
 }
 
 // Update Item QTY
-ordersSchema.methods.updateItemQty = function (selectedItem, newItemQty) {
+ordersSchema.methods.updateItemQty = function (itemId, newQty) {
 	const cart = this;
 	// this is bound to the current cart order
-	const lineItem = cart.lineItems.find(lineItem => lineItem.item._id.equals(selectedItem));
+	const lineItem = cart.lineItems.find(lineItem => lineItem.item._id.equals(itemId));
 	// find line item in cart for specific order item
-	if (lineItem && newItemQty <= 0) {
+	if (lineItem && newQty <= 0) {
 		// Remove item from the cart lineItems array
 		lineItem.remove();
 	} else if (lineItem) {
 		// Set new qty if qty is not already 0
-		lineItem.qty = newItemQty
+		lineItem.qty = newQty
 	}
 	// save
+	console.log("i've completed updating the cart!")
 	return cart.save();
 	}
 
