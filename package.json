@@ -27,6 +27,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "seed": "node testSeed.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

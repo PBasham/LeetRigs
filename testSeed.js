@@ -33,7 +33,6 @@ db.on("open", () => {
                         // 2. remove '-' and (offers) or right side of those that have it.
                         // 3. Remove comma if needed
                         // 4. convert to number/numreric
-                    //
                     console.log(element.price)
                 })
 
