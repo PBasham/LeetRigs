@@ -10,6 +10,8 @@ const purchaseCtrl = require('../../controllers/api/orders')
 router.get('/mycart', purchaseCtrl.userCart)
 // POST /api/purchases/mycart/items/:id
 router.post('/mycart/items/:id', purchaseCtrl.addToCart)
+// POST /api/purchases/mycart/checkout
+router.post('/mycart/checkout', purchaseCtrl.cartCheckout)
 // PUT /api/purchases/mycart/qty
 router.put('/mycart/qty', purchaseCtrl.updateItemQtyCart)
 
