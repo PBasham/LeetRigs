@@ -35,6 +35,8 @@ app.use('/api/users', require('./routes/api/users'));
 const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use('/api/items', ensureLoggedIn, require('./routes/api/items'));
 app.use('/api/purchases', ensureLoggedIn, require('./routes/api/orders'));
+// app.use('/api/items', require('./routes/api/items'));
+// app.use('/api/purchases', require('./routes/api/orders'));
 // all othe APIs
 
 

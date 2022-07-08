@@ -9,7 +9,8 @@ const Order = require('../../models/order')
 module.exports = {
         userCart,
         addToCart,
-        updateItemQtyCart
+        updateItemQtyCart,
+        cartCheckout
 }
 
 
@@ -37,4 +38,12 @@ async function updateItemQtyCart(req, res) {
         const userCart = await Order.findCart(req.user._id)
         await userCart.updateItemQty(req.body.itemId, req.body.newQty)
         res.json(userCart)
+}
+
+async function cartCheckout(req, res) {
+        const cart = await Order.findCart(req.user._id)
+        // mark the users unpaid cart and paid!
+        cart.isPaid = true
+        await cart.save()
+        res.json(cart)
 }
