@@ -29,6 +29,12 @@ db.on("open", () => {
                 console.log(itemsJson)
                 itemsJson.products.forEach(element => {
                     // for price - 
+                    element.price = element.price.trim()
+                    element.price = element.price.slice(1)
+                    element.price = element.price.split("(")[0]
+                    element.price = element.price.slice(0,-1)
+                    element.price = element.price.split(",")[0] + (element.price.split(",")[1] ? element.price.split(",")[1] : "")
+                    element.price = parseFloat(element.price)
                         // 1. remove the dollar sign
                         // 2. remove '-' and (offers) or right side of those that have it.
                         // 3. Remove comma if needed

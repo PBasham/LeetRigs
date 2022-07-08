@@ -21,14 +21,14 @@ const db = mongoose.connection;
 // mongoose.connect(MONGODB_URI, CONFIG) // Establish connection to database
 
 //Connection to loval MongoDB
-// const DATABASE_URL = process.env.DATABASE_URL
+const DATABASE_URL = process.env.DATABASE_URL
 const MONGODB_URI = process.env.MONGODB_URI
 const CONFIG = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }
 
-mongoose.connect(MONGODB_URI, CONFIG)
+mongoose.connect(DATABASE_URL, CONFIG)
 
 db.on('connected', () => {
   console.log(`Connected to ${db.name} at ${db.host}: ${db.port}`);

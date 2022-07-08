@@ -49,6 +49,7 @@ export default function CheckoutArea({ cart, setCart }) {
           {lineItems.length ?
             <div className="checkout-cart">
               {lineItems}
+              {cart.orderTotal}
               <button onClick={handleCheckout} className="checkout-btn">Checkout</button>
             </div>
             :
