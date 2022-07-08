@@ -11,20 +11,20 @@ const itemsSchema = new Schema(
 	{
 		title: {
 			type: String,
-			required: true
+			// required: true
 		},
 		price: {
-			type: Number,
-			required: true,
+			type: String,
+			// required: true,
 			default: 0,
 		},
 		description: {
 			type: String,
-			required: true
+			// required: true
 		},
 		image: {
 			type: String,
-			required: true
+			// required: true
 		},
 		category: {
 			type: String,

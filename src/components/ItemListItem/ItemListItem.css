@@ -22,9 +22,8 @@
 
 .item-img {
   margin: 20px auto;
-  padding: 10px;
   width: 200px;
-  aspect-ratio: 1;
+  aspect-ratio: 1.2;
   border-radius: 15px;
   box-shadow: 0 0 3px 1px gray;
 }
