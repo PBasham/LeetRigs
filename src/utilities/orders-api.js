@@ -27,3 +27,6 @@ export function updateCart(itemId, newQty) {
 }
 
 // checkout the unpaid order (cart) and mark the order as paid
+export function checkoutCart() {
+  return
+}
