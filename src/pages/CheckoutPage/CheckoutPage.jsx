@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import CheckoutArea from "../../components/CheckoutArea/CheckoutArea";
 import * as OrderApi from "../../utilities/orders-api.js"
 
+import "./CheckoutPage.css"
 
 export default function CheckoutPage({ user, setUser }) {
 
