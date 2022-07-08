@@ -17,7 +17,7 @@ export default function CheckoutPage({ user, setUser }) {
 
 return (
     <div className="checkout-page-div">
-        <h1>CheckOut</h1>
+        <h1>Review order and Checkout</h1>
         <div className="checkout-order">
             <CheckoutArea
                 cart={cart}
