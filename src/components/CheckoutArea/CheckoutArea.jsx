@@ -44,7 +44,6 @@ export default function CheckoutArea({ cart, setCart }) {
     
   return (
     <div>
-      <h1>My Cart</h1>
         <div>
           {lineItems.length ?
             <div className="checkout-cart">
