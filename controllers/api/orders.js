@@ -35,6 +35,6 @@ async function addToCart(req, res) {
 
 async function updateItemQtyCart(req, res) {
         const userCart = await Order.findCart(req.user._id)
-        await userCart.updateItemQty(req.body.selectedItem, req.body.newItemQty)
+        await userCart.updateItemQty(req.body.itemId, req.body.newQty)
         res.json(userCart)
 }

@@ -22,8 +22,8 @@ export function addToCart(itemId) {
 }
 
 // Update the quantity for the selected item within the unpaid order (cart)
-export function updateCart(selectedItem, newItemQty) {
-  return sendRequest(`${BASE_URL}/mycart/qty`, 'PUT', { selectedItem, newItemQty } )
+export function updateCart(itemId, newQty) {
+  return sendRequest(`${BASE_URL}/mycart/qty`, 'PUT', { itemId, newQty } )
 }
 
 // checkout the unpaid order (cart) and mark the order as paid
