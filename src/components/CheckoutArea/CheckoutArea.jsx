@@ -10,7 +10,6 @@ export default function CheckoutArea({ cart, setCart }) {
           Functions
   ========================================*/
   const handleChangeQty = async (itemId, newQty) => {
-    console.log(newQty);
     const updatedCart = await OrderApi.updateCart(itemId, newQty)
       setCart(updatedCart)
   }
