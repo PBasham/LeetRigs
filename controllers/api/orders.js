@@ -50,8 +50,7 @@ async function cartCheckout(req, res) {
 }
 
 async function getOrders(req, res) {
-        const cart = await Order.findCart(req.user.id)
-        if (cart.isPaid === true)
-                await cart.save()
-                res.json(cart)
+        const pastOrders = await Order.getPastOrders(req.user._id)
+        
+        res.json(pastOrders)
 }

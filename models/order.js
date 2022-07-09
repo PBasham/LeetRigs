@@ -90,6 +90,15 @@ ordersSchema.statics.findCart = function(userId) {
 		
 }
 
+ordersSchema.statics.getPastOrders = function(userId) {
+	// 'this' is the Order model itself, 'user' is pulling from the schema property
+	return this.find(
+		{ user: userId, isPaid: true },
+	)
+		
+		
+}
+
 /*========================================
 		Model Methods
 ========================================*/
