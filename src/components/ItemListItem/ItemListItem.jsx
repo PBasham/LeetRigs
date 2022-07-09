@@ -13,10 +13,15 @@ export default function ItemListItem({ storeItem, setShowItemDetail, setItemDeta
     }
 
     return (
-            <div className="item-card" onClick={handleClick}>
+        <div className="item-card" onClick={handleClick}>
+            <div className="item-title-div">
                 <h3 className="item-title">{storeItem.title}</h3>
-                <img  className="item-img"src={storeItem.image} alt="itempic" />
-                <p className="item-price">${storeItem.price}</p>
             </div>
+            <img className="item-img" src={storeItem.image} alt="itempic" />
+            <div className="item-card-bottom">
+                <p className="item-price">${storeItem.price}</p>
+                <button className="item-card-btn-add">+ <span>Cart</span></button>
+            </div>
+        </div>
     )
 }
