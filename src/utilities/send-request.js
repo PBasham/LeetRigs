@@ -15,7 +15,8 @@ export default async function sendRequest(url, method = 'GET', payload = null) {
     options.headers.Authorization = `Bearer ${token}`;
   }
   const res = await fetch(url, options);
-  console.log(`respond from fetch at: ${url}. Method: ${method}`)
+  
+  console.log(`respond with ${res} from fetch at: ${url}. Method: ${method}`)
   
   if (res.ok) return res.json();
   throw new Error('Bad Request');

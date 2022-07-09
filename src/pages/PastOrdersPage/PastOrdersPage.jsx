@@ -1,28 +1,32 @@
-import * as OrderApi from '../../utilities/orders-api'
-import { useEffect, useState } from 'react'
-
+import * as OrderApi from '../../utilities/orders-api';
+import { useEffect, useState } from 'react';
+import PreviousOrder from '../../components/PreviousOrder/PreviousOrder';
 
 export default function PastOrdersPage() {
+	const [previousOrders, setPreviousOrders] = useState([]);
 
-  const [orders, setOrders] = useState(null)
+	useEffect(function () {
+		(async function getUserOrders() {
+			let userOrders = await OrderApi.pastOrders();
+      setPreviousOrders(userOrders);
+      
+		})();
+	}, []);
 
-  let userOrders = OrderApi.pastOrders()
+  const pastOrders = previousOrders.map(previousOrder =>
+    
+    <PreviousOrder
+    pastorder={previousOrder}
+    key={previousOrder._id}
+    // isPaid={cart.isPaid}
+    // handleChangeQty={handleChangeQty}
+    />
+    );
 
-  useEffect(function() {
-    (async function getUserOrders(){
-        setOrders(userOrders)
-    })()
-}, [])
-
-
-
-{
-  userOrders.map(myOrder => { myOrder }
-  )
+	return (
+		<>
+			<div>MY PAST ORDERS</div>
+      {pastOrders}
+		</>
+	);
 }
-return (
-  <div>MY PAST ORDERS</div>
-
-  )
-}
-
