@@ -19,13 +19,12 @@
 
 .item-card:hover .item-card-btn-add {
   width: 100px;
-  box-shadow: 0 0 5px 1px grey, inset -6em 0 1px 1px rgb(132, 199, 230);
+  /* box-shadow: 0 0 5px 1px grey, inset -6em 0 1px 1px rgb(132, 199, 230); */
   transition: 250 ease-in-out;
 }
 .item-card:hover .item-card-btn-add span {
   display: inline;
   opacity: 1;
-  transition: 500ms ease-in-out;
 }
 
 .item-title-div {
@@ -60,16 +59,16 @@
 .item-card-btn-add {
   padding: 5px 10px;
   font-size: .8em;
-  color: var(--color-btnTxt);
+  color: black;
   height: 40px;
   width: 40px;
   overflow: hidden;
-  background: var(--color-btn);
+  background: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%);
   border-radius: 10px;
   border: none;
   white-space: nowrap;
   box-shadow: 0 0 5px 1px grey;
-  transition:  ease-in-out 300ms;
+  transition:  300ms ease-in-out;
 }
 .item-card-btn-add span{
   display: none;
@@ -78,6 +77,6 @@
 
 .item-card-btn-add:hover {
   color: black;
-  /* background: linear-gradient(to top right, #b3e5f9, #fff8af); */
+  background: linear-gradient(to top right, #b3e5f9, #fff8af);
   transform: scale(1.05);
 }
