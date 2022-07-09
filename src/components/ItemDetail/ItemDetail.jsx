@@ -33,14 +33,9 @@ export default function ItemDetail({ setShowItemDetail, itemDetail, cart, setCar
                 <button className="item-detail-close-btn" onClick={leaveDetailWindow}>X</button>
                 <h3 className="item-detail-name">{itemDetail.title}</h3>
                     <img className="item-detail-img" src={itemDetail.image}></img>
-                <p className="item-detail-desc">{itemDetail.description}</p>
                 <div className="info">
-                    <div className="flex-start">
                         <p className="item-detail-price">Price: ${itemDetail.price}</p>
-                    </div>
-                    <div className="flex-end">
                         <button className="btn-add" onClick={handleClick}>Add To Cart</button>
-                    </div>
                 </div>
             </div>
         </div>
