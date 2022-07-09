@@ -13,6 +13,7 @@ import AuthPage from "../../pages/AuthPage/AuthPage.jsx"
 import ItemPage from "../../pages/ItemPage/ItemPage.jsx"
 import CheckoutPage from '../CheckoutPage/CheckoutPage';
 import ItemDetail from '../../components/ItemDetail/ItemDetail';
+import PastOrdersPage from '../PastOrdersPage/PastOrdersPage';
 
 /*========================================
         import css
@@ -45,6 +46,7 @@ return (
                         <Route path="/items" element={<ItemPage setShowItemDetail={setShowItemDetail} setItemDetail={setItemDetail} />} />
                         <Route path="/*" element={<Navigate to="/items" />} />
                         <Route path="/checkout" element={<CheckoutPage user={user} setUser={setUser} />} />
+                        <Route path="/pastorders" element={<PastOrdersPage user={user} setUser={setUser} />} />
                 </Routes>
                 </>
         :

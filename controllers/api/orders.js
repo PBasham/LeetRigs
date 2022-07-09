@@ -10,7 +10,8 @@ module.exports = {
         userCart,
         addToCart,
         updateItemQtyCart,
-        cartCheckout
+        cartCheckout,
+        getOrders
 }
 
 
@@ -46,4 +47,11 @@ async function cartCheckout(req, res) {
         cart.isPaid = true
         await cart.save()
         res.json(cart)
+}
+
+async function getOrders(req, res) {
+        const cart = await Order.findCart(req.user.id)
+        if (cart.isPaid === true)
+                await cart.save()
+                res.json(cart)
 }
