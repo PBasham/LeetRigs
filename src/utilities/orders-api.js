@@ -30,3 +30,8 @@ export function updateCart(itemId, newQty) {
 export function checkoutCart() {
   return sendRequest(`${BASE_URL}/mycart/checkout`, `POST`)
 }
+
+// Show past orders using cart isPaid property
+export function pastOrders() {
+  return sendRequest(`${BASE_URL}/mycart/pastorders`)
+}
