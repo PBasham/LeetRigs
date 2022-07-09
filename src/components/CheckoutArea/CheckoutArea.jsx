@@ -44,11 +44,11 @@ export default function CheckoutArea({ cart, setCart }) {
     
   return (
     <div>
-      <h1>My Cart</h1>
-        <div>
+        <div className="cart-area">
           {lineItems.length ?
             <div className="checkout-cart">
               {lineItems}
+              ${cart.orderTotal.toFixed(2)}
               <button onClick={handleCheckout} className="checkout-btn">Checkout</button>
             </div>
             :
