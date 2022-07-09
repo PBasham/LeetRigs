@@ -34,7 +34,7 @@ export default function ItemDetail({ setShowItemDetail, itemDetail, cart, setCar
                 <h3 className="item-detail-name">{itemDetail.title}</h3>
                     <img className="item-detail-img" src={itemDetail.image}></img>
                 <div className="info">
-                        <p className="item-detail-price">Price: ${itemDetail.price}</p>
+                        <p className="item-detail-price">Price: ${itemDetail.price}.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")</p>
                         <button className="btn-add" onClick={handleClick}>Add To Cart</button>
                 </div>
             </div>

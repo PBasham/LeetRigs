@@ -19,7 +19,7 @@ export default function ItemListItem({ storeItem, setShowItemDetail, setItemDeta
             </div>
             <img className="item-img" src={storeItem.image} alt="itempic" />
             <div className="item-card-bottom">
-                <p className="item-price">${storeItem.price}</p>
+                <p className="item-price">${storeItem.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
                 <button className="item-card-btn-add">+ <span>Cart</span></button>
             </div>
         </div>

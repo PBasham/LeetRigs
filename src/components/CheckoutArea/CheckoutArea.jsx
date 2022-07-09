@@ -48,7 +48,7 @@ export default function CheckoutArea({ cart, setCart }) {
           {lineItems.length ?
             <div className="checkout-cart">
               {lineItems}
-              ${cart.orderTotal.toFixed(2)}
+              ${cart.orderTotal.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
               <button onClick={handleCheckout} className="checkout-btn">Checkout</button>
             </div>
             :
