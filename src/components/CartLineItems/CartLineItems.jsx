@@ -11,7 +11,7 @@ export default function CartLineItems({ lineItem, key, handleChangeQty }) {
 
       <div className="cart-info">
 
-        <p className="item-price">${lineItem.item.price}</p>
+        <p className="cart-item-price">${lineItem.item.price}</p>
 
         <div className="item-qty-div">
           <button className="cart-increment-btn subtract" onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty - 1)}>-</button>
