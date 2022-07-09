@@ -11,13 +11,23 @@
   background: linear-gradient(to top right, #b3e5f9, #fff8af);
   border-radius: 15px;
   box-shadow: 0 0 5px 1px rgb(159, 159, 159);
-  transition: 250ms ease-in;
+  transition: 250ms ease-in-out;
 }
 .item-card:hover {
   transform: scale(1.1);
-  
-
 }
+
+.item-card:hover .item-card-btn-add {
+  width: 100px;
+  box-shadow: 0 0 5px 1px grey, inset -6em 0 1px 1px rgb(132, 199, 230);
+  transition: 250 ease-in-out;
+}
+.item-card:hover .item-card-btn-add span {
+  display: inline;
+  opacity: 1;
+  transition: 500ms ease-in-out;
+}
+
 .item-title-div {
   min-height: 100px;
   min-width: 275px;
@@ -51,16 +61,23 @@
   padding: 5px 10px;
   font-size: .8em;
   color: var(--color-btnTxt);
+  height: 40px;
+  width: 40px;
+  overflow: hidden;
   background: var(--color-btn);
   border-radius: 10px;
   border: none;
+  white-space: nowrap;
   box-shadow: 0 0 5px 1px grey;
-  transition: 300ms ease-in-out;
+  transition:  ease-in-out 300ms;
+}
+.item-card-btn-add span{
+  display: none;
+  opacity: 0;  
 }
 
 .item-card-btn-add:hover {
   color: black;
-  background: linear-gradient(to top right, #b3e5f9, #fff8af);
+  /* background: linear-gradient(to top right, #b3e5f9, #fff8af); */
   transform: scale(1.05);
-  /* box-shadow: 0 0 5px 1px grey, inset 0 -3em 5px 1px rgb(132, 199, 230); */
 }

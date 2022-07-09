@@ -19,7 +19,6 @@ export default function ItemDetail({ setShowItemDetail, itemDetail, cart, setCar
     ========================================*/
     const handleClick = () => {
         const activeCart = OrderApi.addToCart(itemDetail._id)
-        { console.log(activeCart) }
     }
 
     // async function handleAddToCart(itemId) {
