@@ -14,7 +14,8 @@ router.post('/mycart/items/:id', purchaseCtrl.addToCart)
 router.post('/mycart/checkout', purchaseCtrl.cartCheckout)
 // PUT /api/purchases/mycart/qty
 router.put('/mycart/qty', purchaseCtrl.updateItemQtyCart)
-
+// GET /api/purchases/mycart/pastorders
+router.get('/mycart/pastorders', purchaseCtrl.getOrders)
 
 
 
