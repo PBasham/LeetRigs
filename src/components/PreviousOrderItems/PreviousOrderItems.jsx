@@ -6,16 +6,17 @@ import PastOrdersPage from "../../pages/PastOrdersPage/PastOrdersPage"
 export default function PreviousOrderItems({ orderItem }) {
 	return (
     <>
+      
       <div className='order-id'>
-        Model #: {orderItem._id}
+        Model #: <strong>{orderItem._id}</strong>
       </div>
 			<div className="order-item-container">
-				Ordered on: {orderItem.item.createdAt.split('T')[0]}
+				Placed on: {orderItem.item.createdAt.split('T')[0]}
 				<div className="order-item-name">
 					{orderItem.item.title}
 				</div>
 				<div className="order-item-price">
-					${orderItem.item.price}
+					Price: ${orderItem.item.price}
         </div>
         <div className='order-item-qty'>
            QTY: {orderItem.qty}
@@ -26,7 +27,7 @@ export default function PreviousOrderItems({ orderItem }) {
 						src={orderItem.item.image}
 						alt="itempic"
 					/>
-				</div>
+        </div>
 			</div>
 		</>
 	);

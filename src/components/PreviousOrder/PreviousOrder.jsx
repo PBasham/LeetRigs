@@ -1,5 +1,6 @@
 import PreviousOrderItems from '../PreviousOrderItems/PreviousOrderItems';
 import { createContext } from 'react';
+import "./PreviousOrder.css"
 
 const archived = createContext();
 
@@ -8,16 +9,26 @@ export default function PreviousOrder({ pastOrder }) {
 		<PreviousOrderItems orderItem={orderItem} key={orderItem._id} />
 	));
 
-	return (
+  return (
+    <>
     <div>
       {/* <PreviousOrder pastOrder={pastOrder} /> */}
-			<div className="cart-area">
+        <div className="cart-area">
+          <div className='order-details'>
+            Invoice Details
+            </div>
 				{orderItems.length ? (
-					<div className="checkout-cart">{orderItems}</div>
-				) : (
-					<div>No Previous Orders</div>
-				)}
-			</div>
-		</div>
+          // <div>Order Details</div>
+            <>
+          <div className="checkout-cart">{orderItems}</div>
+              <div>Order Total: MATH GOES HERE(its late...)</div>
+              </>
+          ) : (
+            <div>No Previous Orders</div>
+            )}
+        </div>
+        </div>
+        
+            </>
 	);
 }

@@ -2,6 +2,7 @@ import * as OrderApi from '../../utilities/orders-api';
 import { useEffect, useState } from 'react';
 import PreviousOrder from '../../components/PreviousOrder/PreviousOrder';
 import PreviousOrderItems from '../../components/PreviousOrderItems/PreviousOrderItems';
+import './PastOrdersPage.css'
 
 
 export default function PastOrdersPage() {
@@ -20,8 +21,8 @@ export default function PastOrdersPage() {
 	));
 
 	return (
-		<div>
-			PAST ORDERS
+		<div className='past-orders'>
+			<h1>Previous Orders</h1>
 			{pastOrders}
 		</div>
 	);
