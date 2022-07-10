@@ -10,6 +10,7 @@ import { Link } from "react-router-dom"
 import CheckoutPage from "../../pages/CheckoutPage/CheckoutPage"
 import ItemPage from "../../pages/ItemPage/ItemPage"
 import UserLogOut from "../UserLogOut/UserLogOut"
+import PastOrdersPage from "../../pages/PastOrdersPage/PastOrdersPage"
 /*========================================
         import Css
 ========================================*/
@@ -64,15 +65,15 @@ export default function NavBar({ user, setUser }) {
             }
 
             {!orderHistoryActive ?
-                // <Link 
-                //     to="/checkout" 
-                //     element={<CheckoutPage />}
-                //     onClick={checkoutPageClicked}
-                //     >
-                <button  onClick={orderHistoryClicked} className="nav-btn flex-start">
+                <Link 
+                    to="/pastorders" 
+                    element={<PastOrdersPage />}
+                    onClick={orderHistoryClicked}
+                    >
+                <button className="nav-btn flex-start">
                     Order History
                 </button>
-                // </Link> 
+                 </Link> 
                 :
                 <button className="nav-btn flex-start nav-btn-active">
                     Order History
