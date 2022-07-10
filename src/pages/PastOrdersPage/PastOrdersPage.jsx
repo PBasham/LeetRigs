@@ -25,7 +25,7 @@ export default function PastOrdersPage() {
 
 	return (
 		<>
-			<div>MY PAST ORDERS</div>
+			<div>MY PREVIOUS ORDERS</div>
       {pastOrders}
 		</>
 	);
