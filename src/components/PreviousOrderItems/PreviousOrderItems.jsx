@@ -4,7 +4,7 @@ export default function PreviousOrderItems({ orderItem }) {
 
   return (
     <>
-      Ordered on: {orderItem.item.createdAt}
+      Ordered on: {orderItem.item.createdAt.split("T")[0]}
     <div className='order-item-name'>
       {orderItem.item.title}
     </div>
