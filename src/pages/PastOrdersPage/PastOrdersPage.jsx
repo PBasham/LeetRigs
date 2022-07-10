@@ -1,6 +1,8 @@
 import * as OrderApi from '../../utilities/orders-api';
 import { useEffect, useState } from 'react';
 import PreviousOrder from '../../components/PreviousOrder/PreviousOrder';
+import PreviousOrderItems from '../../components/PreviousOrderItems/PreviousOrderItems';
+
 
 export default function PastOrdersPage() {
 	const [previousOrders, setPreviousOrders] = useState([]);
@@ -8,25 +10,19 @@ export default function PastOrdersPage() {
 	useEffect(function () {
 		(async function getUserOrders() {
 			let userOrders = await OrderApi.pastOrders();
-      setPreviousOrders(userOrders);
-      
+			setPreviousOrders(userOrders);
 		})();
 	}, []);
 
-  const pastOrders = previousOrders.map(previousOrder =>
-    
-    <PreviousOrder
-    pastorder={previousOrder}
-    key={previousOrder._id}
-    // isPaid={cart.isPaid}
-    // handleChangeQty={handleChangeQty}
-    />
-    );
+	const pastOrders = previousOrders.map((previousOrder) => (
+		<PreviousOrder pastOrder={previousOrder} key={previousOrder._id} />
+		
+	));
 
 	return (
-		<>
-			<div>MY PREVIOUS ORDERS</div>
-      {pastOrders}
-		</>
+		<div>
+			PAST ORDERS
+			{pastOrders}
+		</div>
 	);
 }

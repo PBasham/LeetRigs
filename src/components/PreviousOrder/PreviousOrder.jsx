@@ -1,28 +1,23 @@
-import PreviousOrderItems from "../PreviousOrderItems/PreviousOrderItems";
+import PreviousOrderItems from '../PreviousOrderItems/PreviousOrderItems';
+import { createContext } from 'react';
 
-export default function PreviousOrder({ pastorder }) {
+const archived = createContext();
 
-  const orderItems = pastorder.lineItems.map(orderItem =>
-    <PreviousOrderItems
-    orderItem={orderItem}
-    key={orderItem._id}
-    // isPaid={cart.isPaid}
-    // handleChangeQty={handleChangeQty}
-    />
-    );
+export default function PreviousOrder({ pastOrder }) {
+	const orderItems = pastOrder.lineItems.map((orderItem) => (
+		<PreviousOrderItems orderItem={orderItem} key={orderItem._id} />
+	));
 
-  return (
+	return (
     <div>
-        <div className="cart-area">
-          {orderItems.length ?
-            <div className="checkout-cart">
-              {orderItems}
-              
-            </div>
-            :
-            <div>No Previous Orders</div>
-            }
-      </div>
-    </div>
-  )
+      {/* <PreviousOrder pastOrder={pastOrder} /> */}
+			<div className="cart-area">
+				{orderItems.length ? (
+					<div className="checkout-cart">{orderItems}</div>
+				) : (
+					<div>No Previous Orders</div>
+				)}
+			</div>
+		</div>
+	);
 }
