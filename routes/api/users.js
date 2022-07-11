@@ -18,4 +18,7 @@ router.post('/login', usersCtrl.login);
 // User get route for JWT token
 router.get('/check-token', ensureLoggedIn, usersCtrl.checkToken)
 
+// User delete route for deletion
+router.delete('/delete', usersCtrl.remove)
+
 module.exports = router
