@@ -37,7 +37,7 @@ const [user, setUser] = useState(getUser())
 
 
 return (
-<div className="App">
+        <div className="App">
         { user ? <NavBar setUser={setUser} /> : null }
         {showItemDetail ? <ItemDetail setShowItemDetail={setShowItemDetail} itemDetail={itemDetail}/> : null}
         {user ?
