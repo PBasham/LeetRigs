@@ -16,7 +16,7 @@
     background-color: white;
     box-shadow: inset 0 0 10px 2px rgb(130, 129, 129);
 }
-.checkout-cart p {
+.cart-total {
     margin: 30px;
     font-size: 4em;
 
