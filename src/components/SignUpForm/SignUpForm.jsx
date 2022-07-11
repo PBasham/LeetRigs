@@ -8,6 +8,7 @@ export default function SignUpForm({ setUser, updateShowLogin }) {
         name: '',
         email: '',
         password: '',
+        confirm:''
     });
     const [error, setError] = useState('');
 
@@ -44,7 +45,7 @@ export default function SignUpForm({ setUser, updateShowLogin }) {
                     <label>Password</label>
                     <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
                     <label>Confirm</label>
-                    <input type="confirm" name="confirm" required />
+                    <input type="password" name="confirm" value={credentials.confirm} onChange={handleChange} required />
                     <button type="submit">Sign Up</button>
                 </form>
             </div>
