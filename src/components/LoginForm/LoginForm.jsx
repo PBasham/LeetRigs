@@ -1,8 +1,14 @@
+/*========================================
+        import dependencies
+========================================*/
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 import * as usersService from '../../utilities/users-service';
 
-import SignUpForm from '../SignUpForm/SignUpForm';
+/*========================================
+        import css
+========================================*/
+import "./LoginForm.css"
 
 export default function LoginFrom({ setUser, updateShowLogin }) {
   const [credentials, setCredentials] = useState({
@@ -32,7 +38,7 @@ export default function LoginFrom({ setUser, updateShowLogin }) {
   }
 
   return (
-    <div>
+    <div className='login-wrapper'>
       <div className="form-container" onSubmit={handleSubmit}>
         <form autoComplete="off">
           <label>Email</label>
