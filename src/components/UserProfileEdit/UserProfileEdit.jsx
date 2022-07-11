@@ -1,22 +1,31 @@
+/*========================================
+        import dependencies
+========================================*/
 import { useState } from "react";
+import * as usersServices from "../../utilities/users-service.js"
+
 export default function UserProfileEdit({ user, setUser, setEditState }) {
 
-    const [editCredentials, seteditCredentials] = useState({
+    const [editCredentials, setEditCredentials] = useState({
         name: user.name,
         email: user.email,
         img: "",
     });
+
+
+
+    const handleDeleteAccount = () => {
+        usersServices.remove(editCredentials)
+    }
 
     const handleUpdateClick = () => {
         // Update the users info doing a findOneAndUpdate({email: req.user.email}, {however we would pass this in.})
         setEditState(false)
     }
 
-    const handleChange = (evt) => {
-        seteditCredentials({
-            [evt.target.name]: evt.target.value,
-        });
-    };
+    function handleChange(evt) {
+        setEditCredentials({ ...editCredentials, [evt.target.name]: evt.target.value });
+    }
     return (
         <div className="user-profile-edit">
             <form action="">
@@ -37,7 +46,7 @@ export default function UserProfileEdit({ user, setUser, setEditState }) {
                     {/* When edit is clicked, change state to edit mode, show save button, when page is left without saving change back to out of edit mode */}
                     <div className="profile-edit-btns">
                         <button className="update-account-btn" onClick={handleUpdateClick}>Update profile</button>
-                        <button className="delete-account-btn">Delete profile</button>
+                        <button className="delete-account-btn" onClick={handleDeleteAccount}>Delete profile</button>
                     </div>
                 </div>
             </form>

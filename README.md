@@ -1,5 +1,6 @@
 # LeetRigs 
 Premium gear to make sure you destroy the competition!
+![ERD Picture](public/imgs/readMe/header-img.png)
 <hr>
 
 # Premise:
