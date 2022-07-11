@@ -50,9 +50,9 @@ export default function NavBar({ user, setUser }) {
         setCheckoutPageActive(false)
         setAboutUsActive(false)
     }
-    
+
     return (
-        
+
         <div className="nav-bar">
             {!homeActive ?
                 <Link
@@ -72,41 +72,36 @@ export default function NavBar({ user, setUser }) {
             }
 
             {!orderHistoryActive ?
-                <Link 
-                    to="/pastorders" 
+                <Link
+                    to="/pastorders"
                     element={<PastOrdersPage />}
                     onClick={orderHistoryClicked}
-                    >
-                <button className="nav-btn flex-start">
-                    Order History
-                </button>
-                 </Link> 
+                >
+                    <button className="nav-btn flex-start">
+                        Order History
+                    </button>
+                </Link>
                 :
                 <button className="nav-btn flex-start nav-btn-active">
                     Order History
                 </button>
             }
 
-                {/* {!About ? */}
-                <Link 
-                    to="/about" 
-                    // element={<AboutUsPage />}
-                    onClick={AboutUsClicked}
-                    >
+            <Link
+                to="/about"
+                element={<AboutUsPage />}
+                onClick={AboutUsClicked}
+            >
                 <button className="nav-btn flex-start">
-                    Order History
+                    About Us
                 </button>
-                 </Link> 
-                :
-                <button className="nav-btn flex-start nav-btn-active">
-                    Order History
-                </button>
-            
-            {user}
-            <span className="number welcome">Welcome Back, Me!</span>
+            </Link>
+
+
+            <span className="number welcome">Welcome Back, {user.name}!</span>
             {/* {console.log(req.user)} */}
             {/* <button className="nav-btn flex-start">Order History</button> */}
-                
+
             <div className="flex-end">
                 <span className="number">1-337-LeetRigs</span>
                 {/* This is the Log Out Button */}
@@ -125,7 +120,7 @@ export default function NavBar({ user, setUser }) {
                         className="nav-btn cart nav-btn-active">
                     </button>
                 }
-                
+
                 <UserLogOut user={user} setUser={setUser} />
 
             </div>

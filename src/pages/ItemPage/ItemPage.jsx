@@ -11,7 +11,7 @@ import * as ItemsApi from "../../utilities/items-api.js"
 import "../../index.css"
 import "./ItemPage.css"
 
-export default function ItemPage({ setShowItemDetail, setItemDetail }) {
+export default function ItemPage({ setShowItemDetail, setItemDetail, addItemToCartClick }) {
 
     const [ storeItems, setStoreItems ] = useState([])
     
@@ -34,7 +34,7 @@ export default function ItemPage({ setShowItemDetail, setItemDetail }) {
 
             </div>
             <div className="item-page-div">
-                <ItemList storeItems={storeItems} setShowItemDetail={setShowItemDetail} setItemDetail={setItemDetail}/>
+                <ItemList storeItems={storeItems} setShowItemDetail={setShowItemDetail} setItemDetail={setItemDetail} addItemToCartClick={addItemToCartClick} />
             </div>
         </div>
     )
