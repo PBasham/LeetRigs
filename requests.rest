@@ -37,5 +37,14 @@ Content-Type: application/json
 
 GET http://localhost:3001/api/purchases/mycart/
 
+###
+
+DELETE http://localhost:3000/api/users/delete
+Content-Type: application/json
+
+{
+  "_id": "62c5bbef519117309ca99aa5"
+}
+
 
 
