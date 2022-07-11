@@ -32,7 +32,6 @@ export default function NavBar({ user, setUser, activeNavLink, toggleActiveNavBt
                         "nav-btn profile-link nav-btn-active" 
                 : 
                     "nav-btn nav-btn-active"
-            // return "nav-btn nav-btn-active"
         } else {
 
             return activeNavLink.buttons[index].name === "Cart" || activeNavLink.buttons[index].name === "Profile" ?
