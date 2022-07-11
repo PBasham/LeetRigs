@@ -26,7 +26,7 @@ async function itemSearch(req, res) {
         let searchTerm = req.params.search
         console.log(searchTerm);
         console.log(req.params.search);
-        const itemquery = await Item.find({ title: new RegExp(searchTerm), $options: "i"  });
+        const itemquery = await Item.find({ title: new RegExp(searchTerm, "i") });
         // console.log("HELLO" + itemquery)
         res.json(itemquery)
        
