@@ -23,10 +23,10 @@ export default function ItemPage({ setShowItemDetail, setItemDetail, addItemToCa
     }, [])
 
 
-    // const getSearch = async (search) => {
-    //         const searchedItems = await ItemsApi.getMatching(search)
-    //         setStoreItems(searchedItems)
-    // }
+    const getSearch = async (search) => {
+            const searchedItems = await ItemsApi.getMatching(search)
+            setStoreItems(searchedItems)
+    }
     
 
 
@@ -37,7 +37,9 @@ export default function ItemPage({ setShowItemDetail, setItemDetail, addItemToCa
                 <h2 className="store-tagline">Premium gear to make sure you destroy the competition!</h2>
             </div>
             <div className="item-page-filterbtns">
-
+                <form action="">
+            Search: <input type="search" name="search" id="search" />
+                </form>
             </div>
             <div className="item-page-div">
                 <ItemList storeItems={storeItems} setShowItemDetail={setShowItemDetail} setItemDetail={setItemDetail} addItemToCartClick={addItemToCartClick} />
