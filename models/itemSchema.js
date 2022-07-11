@@ -10,7 +10,7 @@ const Schema = mongoose.Schema;
 const itemsSchema = new Schema(
 	{
 		title: {
-			type: String,
+			type: String
 			// required: true
 		},
 		price: {

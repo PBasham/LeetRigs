@@ -16,7 +16,7 @@ router.get('/', itemsCtrl.index);
 router.get('/:id', itemsCtrl.show);
 
 // Search route
-router.get('/:search', itemsCtrl.itemSearch)
+router.get('/search/:search', itemsCtrl.itemSearch)
 
 /*========================================
         EXPORTS

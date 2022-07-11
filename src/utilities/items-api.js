@@ -14,5 +14,5 @@ export function getById(id) {
 }
 
 export function getMatching(search) {
-    return sendRequest(`${BASE_URL}/${search}`)
+    return sendRequest(`${BASE_URL}/search/${search}`)
 }

@@ -6,8 +6,9 @@ const Item = require('../../models/item');
 /*========================================
         ITEM FUNCTIONS
 ========================================*/
+
 async function index(req, res) {
-	const items = await Item.find({});
+        const items = await Item.find({});
 	//   .sort('name')
 	//   .populate('category')
 	//   .exec();
@@ -20,9 +21,15 @@ async function show(req, res) {
 	res.json(item);
 }
 
+// const search =  new RegExp(search,'g'); // correct way
 async function itemSearch(req, res) {
-        const itemquery = await Item.findOne(req.params.title);
+        let searchTerm = req.params.search
+        console.log(searchTerm);
+        console.log(req.params.search);
+        const itemquery = await Item.find({ title: new RegExp(searchTerm), $options: "i"  });
+        // console.log("HELLO" + itemquery)
         res.json(itemquery)
+       
                 
 }
 

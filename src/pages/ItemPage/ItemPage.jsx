@@ -13,7 +13,8 @@ import "./ItemPage.css"
 
 export default function ItemPage({ setShowItemDetail, setItemDetail, addItemToCartClick }) {
 
-    const [ storeItems, setStoreItems ] = useState([])
+    const [storeItems, setStoreItems] = useState([])
+    //const [search, setSearch] = useState("")
     
     useEffect(function() {
         (async function getStoreItems(){
@@ -21,12 +22,29 @@ export default function ItemPage({ setShowItemDetail, setItemDetail, addItemToCa
             setStoreItems(items)
         })()
     }, [])
+    
+    // useEffect(function () {
+    //     (async function getSearch(){
+    //         const items = await ItemsApi.getMatching(search)
+    //         setStoreItems(items)
+    //     })()
+    // }, [search])
 
-
-    const getSearch = async (search) => {
-            const searchedItems = await ItemsApi.getMatching(search)
-            setStoreItems(searchedItems)
+    const handleSearchChange = async (e) => {
+        let currentSearch = e.target.value
+        if (currentSearch.trim() === "") {
+            const items = await ItemsApi.getAll()
+            setStoreItems(items)
+            return
+        }
+        (async function getSearch(){
+            const items = await ItemsApi.getMatching(currentSearch)
+            console.log(items); 
+            setStoreItems(items)
+            })()
+        
     }
+    
     
 
 
@@ -38,7 +56,7 @@ export default function ItemPage({ setShowItemDetail, setItemDetail, addItemToCa
             </div>
             <div className="item-page-filterbtns">
                 <form action="">
-            Search: <input type="search" name="search" id="search" />
+            Search: <input type="text" name="search" onChange={handleSearchChange}/>
                 </form>
             </div>
             <div className="item-page-div">
