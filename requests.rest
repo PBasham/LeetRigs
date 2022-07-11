@@ -43,7 +43,7 @@ DELETE http://localhost:3000/api/users/delete
 Content-Type: application/json
 
 {
-  "_id": "62c5bbef519117309ca99aa5"
+  "_id": "62cc53068876811779d27cb0"
 }
 
 
