@@ -1,4 +1,13 @@
+/*========================================
+        Import dependencies
+========================================*/
 import { useEffect } from "react"
+
+/*========================================
+        Import Css
+========================================*/
+import "./AboutUsPage.css"
+
 
 export default function AboutUsPage({ toggleActiveNavBtn }) {
 
