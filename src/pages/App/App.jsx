@@ -1,7 +1,7 @@
 /*========================================
         Import Dependencies
 ========================================*/
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Routes, Route, Navigate } from "react-router-dom"
 import { getUser } from '../../utilities/users-service.js';
 import * as OrderApi from "../../utilities/orders-api.js"
@@ -21,50 +21,57 @@ import AboutUsPage from '../AboutUsPage/AboutUsPage.jsx';
         import css
 ========================================*/
 import './App.css';
+import { func } from 'prop-types';
 
 
 function App() {
     const [user, setUser] = useState(getUser())
     const [showItemDetail, setShowItemDetail] = useState(false)
     const [itemDetail, setItemDetail] = useState()
-    const [activeNavLink, setactiveNavLink] = useState({
-        activeButton: null,
-        buttons: [{id: 1, name: "Home"}, {id: 2, name: "Order History"}, {id: 3, name: "About Us"}, {id: 4, name: "Cart"}]
+    const [activeNavLink, setActiveNavLink] = useState({
+        activeButton: 0,
+        buttons: [
+            { id: 0, name: "Home", to: "/home", element: <ItemPage /> },
+            { id: 1, name: "Order History", to: "/pastOrders", element: <PastOrdersPage /> },
+            { id: 2, name: "About Us", to: "about", element: <AboutUsPage /> },
+            { id: 3, name: "Cart", to: "/checkout", element: <CheckoutPage /> }
+        ]
     })
-    
+
     /*========================================
     functions
     ========================================*/
-    // this function is to keep track of the active button / page.
+    
     const toggleActiveNavBtn = (index) => {
-        setactiveNavLink({ ...activeNavLink, activeButton: activeNavLink.buttons[index]})
+        setActiveNavLink({ ...activeNavLink, activeButton: activeNavLink.buttons[index] })
     }
+    
     // function to add tiems to cart
-    const addItemToCartClick = (itemId) => {
-        OrderApi.addToCart(itemId)
-    }
+const addItemToCartClick = (itemId) => {
+    OrderApi.addToCart(itemId)
+}
 
-    //===*** END FUNCTIONS***===//
+//===*** END FUNCTIONS***===//
 
 
-    return (
-        <div className="App">
-            {user ? <NavBar user={user} setUser={setUser} /> : null}
-            {showItemDetail ? <ItemDetail setShowItemDetail={setShowItemDetail} itemDetail={itemDetail} addItemToCartClick={addItemToCartClick} /> : null}
-            {user ?
-                <>
-                    <Routes>
-                        <Route path="/*" element={<Navigate to="/home" />} />
-                        <Route path="/home" element={<ItemPage setShowItemDetail={setShowItemDetail} setItemDetail={setItemDetail} addItemToCartClick={addItemToCartClick} />} />
-                        <Route path="/pastorders" element={<PastOrdersPage user={user} setUser={setUser} />} />
-                        <Route path="/about" element={<AboutUsPage user={user} setUser={setUser} />} />
-                        <Route path="/checkout" element={<CheckoutPage user={user} setUser={setUser} />} />
-                    </Routes>
-                </>
-                :
-                <AuthPage setUser={setUser} />}
-        </div>
-    );
+return (
+    <div className="App">
+        {user ? <NavBar user={user} setUser={setUser} activeNavLink={activeNavLink} toggleActiveNavBtn={toggleActiveNavBtn} /> : null}
+        {showItemDetail ? <ItemDetail setShowItemDetail={setShowItemDetail} itemDetail={itemDetail} addItemToCartClick={addItemToCartClick} /> : null}
+        {user ?
+            <>
+                <Routes>
+                    <Route path="/*" element={<Navigate to="/home" />} />
+                    <Route path="/home" element={<ItemPage setShowItemDetail={setShowItemDetail} setItemDetail={setItemDetail} addItemToCartClick={addItemToCartClick} toggleActiveNavBtn={toggleActiveNavBtn}/>} />
+                    <Route path="/pastorders" element={<PastOrdersPage user={user} setUser={setUser} toggleActiveNavBtn={toggleActiveNavBtn}/>} />
+                    <Route path="/about" element={<AboutUsPage user={user} setUser={setUser} toggleActiveNavBtn={toggleActiveNavBtn}/>} />
+                    <Route path="/checkout" element={<CheckoutPage user={user} setUser={setUser} toggleActiveNavBtn={toggleActiveNavBtn}/>} />
+                </Routes>
+            </>
+            :
+            <AuthPage setUser={setUser} />}
+    </div>
+);
 }
 
 export default App;

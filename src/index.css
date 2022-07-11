@@ -5,24 +5,32 @@
 /* font-family: 'Iceland', cursive; */
 
 :root {
-  --color-neongreen: rgb(96, 194, 145);
-  --color-prettyGradient: linear-gradient(to top right, #b3e5f9, #fff8af);
+    --color-neongreen: rgb(96, 194, 145);
+    --color-prettyGradient: linear-gradient(to top right, #b3e5f9, #fff8af);
 }
-*, 
-*::before, 
+
+*,
+*::before,
 *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  text-align: center;
-  font-family: 'Secular One', sans-serif;
-  background: linear-gradient(to bottom right, rgb(185, 200, 230) 50%, #237a92);
+    min-height: 100vh;
+    text-align: center;
+    font-family: 'Secular One', sans-serif;
+    background: linear-gradient(to bottom right, rgb(185, 200, 230) 50%, #237a92);
+    padding: 50px 0 100px 0;
+}
+
+h1 {
+    font-size: 5vw;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .nav-btn {
-  color: #2A2b2dff;
-  font-family: "Orbitron", sans-serif;
+    color: #2A2b2dff;
+    font-family: "Orbitron", sans-serif;
 }

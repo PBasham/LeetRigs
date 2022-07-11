@@ -1,0 +1,8 @@
+.about-div-wrapper {
+    margin: 50px auto;
+    width: clamp(600px, 50vw,80vw);
+}
+
+.about-div-wrapper {
+    margin-bottom: 20px;
+}

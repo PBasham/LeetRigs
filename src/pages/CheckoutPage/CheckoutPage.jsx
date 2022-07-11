@@ -4,7 +4,7 @@ import * as OrderApi from "../../utilities/orders-api.js"
 
 import "./CheckoutPage.css"
 
-export default function CheckoutPage({ user, setUser }) {
+export default function CheckoutPage({ user, setUser, toggleActiveNavBtn}) {
 
     const [cart, setCart] = useState(null)
     
@@ -13,6 +13,7 @@ export default function CheckoutPage({ user, setUser }) {
             const userCart = await OrderApi.findCart()
             setCart(userCart)
         })()
+        toggleActiveNavBtn(3)
     }, [])
 
 
