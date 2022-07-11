@@ -11,6 +11,7 @@ import CheckoutPage from "../../pages/CheckoutPage/CheckoutPage"
 import ItemPage from "../../pages/ItemPage/ItemPage"
 import UserLogOut from "../UserLogOut/UserLogOut"
 import PastOrdersPage from "../../pages/PastOrdersPage/PastOrdersPage"
+import AboutUsPage from "../../pages/AboutUsPage/AboutUsPage.jsx"
 /*========================================
         import Css
 ========================================*/
