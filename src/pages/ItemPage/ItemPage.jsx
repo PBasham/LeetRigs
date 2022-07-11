@@ -21,6 +21,12 @@ export default function ItemPage({ setShowItemDetail, setItemDetail, addItemToCa
             setStoreItems(items)
         })()
     }, [])
+
+
+    // const getSearch = async (search) => {
+    //         const searchedItems = await ItemsApi.getMatching(search)
+    //         setStoreItems(searchedItems)
+    // }
     
 
 
