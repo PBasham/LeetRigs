@@ -1,0 +1,45 @@
+.login-wrapper p,
+.login-wrapper label{
+    margin: 20px auto 10px auto;
+    font-size: 1vw;
+}
+.login-wrapper label:first-child {
+    margin-top: 60px;
+}
+.form-container {
+    margin: 0 auto;
+    max-width: 30vw;
+}
+.form-container form {
+display: flex;
+justify-content: center;
+flex-direction: column;
+}
+
+.form-container input {
+    margin: 0 auto;
+    margin-bottom: 40px;
+    width: 30vw;
+}
+.form-container button {
+    margin: 0 auto;
+    width: 10vw;
+    height: 4vh;
+    padding: 5px 10px;
+    font-size: 1em;
+    background: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%);
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 5px 1px grey;
+    transition:  ease-out;
+}
+
+.form-container button:hover {
+    border: 2px solid blue;
+    transform: scale(1.1);
+}
+
+.form-container button:active {
+    background-color: lightskyblue;
+    transform: scale(1.1);
+}

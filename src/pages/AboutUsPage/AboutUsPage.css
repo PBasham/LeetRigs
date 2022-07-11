@@ -1,8 +1,9 @@
 .about-div-wrapper {
     margin: 50px auto;
     width: clamp(600px, 50vw,80vw);
+    font-size: clamp(16px, 1.5vw, 2em);
 }
 
-.about-div-wrapper {
+.about-div-wrapper h1{
     margin-bottom: 20px;
 }

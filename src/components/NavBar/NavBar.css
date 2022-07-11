@@ -11,6 +11,7 @@
 	display: flex;
     position: fixed;
 	justify-content: flex-start;
+    align-items: center;
 	flex-direction: row;
     top:0;
 	padding: 0 10px;
@@ -19,22 +20,6 @@
 	background-color: var(--color-nav);
 	box-shadow: 0 0 5px 1px black;
     z-index: 100;
-}
-
-.number {
-	margin-right: 7vh;
-	margin-top: 1vh;
-	white-space: nowrap;
-	width: 100px;
-	height: 50px;
-	padding: 5px;
-	font-size: 18px;
-	font-weight: bold;
-	border: none;
-}
-
-.welcome {
-    font-size: 14px;
 }
 
 a {
@@ -69,6 +54,12 @@ a {
 		inset -12px 0 10px -6px var(--color-navBtnShadow),
 		inset 0 -3.25em 0 0 var(--color-navBtnAccent);
 }
+
+.welcome {
+    font-size: 16px;
+    margin-left: 20px;
+}
+
 .cart {
 	display: flex;
 	justify-content: center;
@@ -79,6 +70,7 @@ a {
 	height: 40px;
     color: transparent;
 	border-radius: 50%;
+    border: none;
 	background: url(https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/322/shopping-cart_1f6d2.png);
 	background-position: center;
 	background-repeat: no-repeat;
@@ -92,9 +84,15 @@ a {
 		inset 0 0 2px 2px var(--color-navBtnShadow);
 }
 
+.number {
+    margin-right: 20px;
+	font-size: 18px;
+}
+
 .flex-end {
 	display: flex;
 	flex-direction: row;
+    align-items: center;
 	margin-left: auto;
 }
 

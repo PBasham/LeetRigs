@@ -11,7 +11,14 @@
 .order-item-pic {
   margin-top: 2%;
 }
-
+.checkout-cart-border {
+    margin: 0 auto 30px auto;
+    padding: 10px;
+    max-width: 80vw;
+    border-radius: 15px;
+    background-color: rgb(218, 218, 218);
+    box-shadow: 0 0 10px 2px rgb(130, 130, 130);
+}
 .checkout-cart {
   display: flex;
   flex-direction: column;

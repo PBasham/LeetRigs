@@ -16,10 +16,11 @@
     background-color: white;
     box-shadow: inset 0 0 10px 2px rgb(130, 129, 129);
 }
-.cart-total {
-    margin: 30px;
-    font-size: 4em;
-
+p.cart-total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
 }
 .checkout-cart-item {
     position: relative;
