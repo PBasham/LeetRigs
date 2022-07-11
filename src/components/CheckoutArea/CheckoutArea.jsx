@@ -56,7 +56,7 @@ export default function CheckoutArea({ cart, setCart }) {
                 </div>
               </>
               :
-              <p className="">No items in cart</p>
+              <p className="cart-total">No items in cart</p>
             }
           </div>
         </div>
