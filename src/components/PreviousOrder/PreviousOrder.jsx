@@ -27,7 +27,7 @@ export default function PreviousOrder({ pastOrder }) {
                   Invoice #: {pastOrder._id}
                 </div>
                 <div className='order-total'>
-                  Total: ${pastOrder.orderTotal}
+                  Total amount: ${pastOrder.orderTotal}
                 </div>
                 <div className='placed-on'>
                   Placed on: {pastOrder.createdAt.split('T')[0]}
