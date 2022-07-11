@@ -8,6 +8,7 @@ import { Link } from "react-router-dom"
 ========================================*/
 import CheckoutPage from "../../pages/CheckoutPage/CheckoutPage"
 import UserLogOut from "../UserLogOut/UserLogOut.jsx"
+import UserProfilePage from "../../pages/UserProfilePage/UserProfilePage"
 /*========================================
         import Css
 ========================================*/
@@ -23,12 +24,12 @@ export default function NavBar({ user, setUser, activeNavLink, toggleActiveNavBt
     const toggleActiveNavBtnStyle = (index) => {
 
         if (activeNavLink.buttons[index] === activeNavLink.activeButton) {
-            return activeNavLink.buttons[index].name === "Cart" ?
+            return activeNavLink.buttons[index].name === "Cart" || activeNavLink.buttons[index].name === "Profile" ?
                 "nav-btn cart nav-btn-active" : "nav-btn nav-btn-active"
             // return "nav-btn nav-btn-active"
         } else {
 
-            return activeNavLink.buttons[index].name === "Cart" ?
+            return activeNavLink.buttons[index].name === "Cart" || activeNavLink.buttons[index].name === "Profile " ?
                 "nav-btn cart" : "nav-btn"
         }
     }
@@ -37,7 +38,7 @@ export default function NavBar({ user, setUser, activeNavLink, toggleActiveNavBt
     return (
         <div className="nav-bar">
             {activeNavLink.buttons.map((navButton, index) => (
-                navButton.name === "Cart" ? null :
+                navButton.name === "Cart"  || navButton.name === "Profile" ? null :
                     <Link
                         key={index}
                         className={toggleActiveNavBtnStyle(index)}
@@ -63,6 +64,15 @@ export default function NavBar({ user, setUser, activeNavLink, toggleActiveNavBt
                     className={toggleActiveNavBtnStyle(3)}
                     onClick={() => {
                         toggleActiveNavBtn(3)
+                    }}
+                >
+                </Link>
+                <Link
+                    to="/profile"
+                    element={<UserProfilePage />}
+                    className={toggleActiveNavBtnStyle(4)}
+                    onClick={() => {
+                        toggleActiveNavBtn(4)
                     }}
                 >
                 </Link>

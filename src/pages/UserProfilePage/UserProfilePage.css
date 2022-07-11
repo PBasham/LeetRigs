@@ -1,0 +1,58 @@
+.profilePage-wrapper {
+    margin: 50px auto 0 auto;
+    padding: 10px;
+    max-width: 80vw;
+    border-radius: 15px;
+    background-color: rgb(218, 218, 218);
+    box-shadow: 0 0 10px 2px rgb(130, 130, 130);
+}
+.profilePage-div {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: inset 0 0 10px 2px rgb(130, 129, 129);
+}
+
+
+
+
+
+
+
+
+.user-profile-img {
+    margin: 0 auto;
+    width: 100px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    box-shadow: 0 0 3px 1px black;
+    background: 
+        linear-gradient(to bottom right,
+        rgba(119, 237, 255, 0.5) 50%,
+        rgba(38, 59, 217, 0.5)),
+         url(https://media.istockphoto.com/vectors/service-icon-vector-male-operator-person-profile-avatar-with-headset-vector-id923732042?s=612x612);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.edit-account-btn {
+    padding: 5px 10px;
+    font-size: 1.2em;
+    background: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%);
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 5px 1px grey;
+    transition:  ease-out;
+}
+
+.edit-account-btn:hover {
+    border: 2px solid blue;
+    transform: scale(1.1);
+}
+
+.edit-account-btn:active {
+    background-color: lightskyblue;
+    transform: scale(1.1);
+}

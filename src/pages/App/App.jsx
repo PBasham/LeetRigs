@@ -16,6 +16,7 @@ import CheckoutPage from '../CheckoutPage/CheckoutPage';
 import ItemDetail from '../../components/ItemDetail/ItemDetail';
 import PastOrdersPage from '../PastOrdersPage/PastOrdersPage';
 import AboutUsPage from '../AboutUsPage/AboutUsPage.jsx';
+import UserProfilePage from "../UserProfilePage/UserProfilePage.jsx"
 
 /*========================================
         import css
@@ -34,7 +35,8 @@ function App() {
             { id: 0, name: "Home", to: "/home", element: <ItemPage /> },
             { id: 1, name: "Order History", to: "/pastOrders", element: <PastOrdersPage /> },
             { id: 2, name: "About Us", to: "about", element: <AboutUsPage /> },
-            { id: 3, name: "Cart", to: "/checkout", element: <CheckoutPage /> }
+            { id: 3, name: "Cart", to: "/checkout", element: <CheckoutPage /> },
+            { id: 4, name: "Profile", to: "/profile", element: <UserProfilePage /> }
         ]
     })
 
@@ -66,6 +68,7 @@ return (
                     <Route path="/pastorders" element={<PastOrdersPage user={user} setUser={setUser} toggleActiveNavBtn={toggleActiveNavBtn}/>} />
                     <Route path="/about" element={<AboutUsPage user={user} setUser={setUser} toggleActiveNavBtn={toggleActiveNavBtn}/>} />
                     <Route path="/checkout" element={<CheckoutPage user={user} setUser={setUser} toggleActiveNavBtn={toggleActiveNavBtn}/>} />
+                    <Route path="/profile" element={<UserProfilePage user={user}/>} />
                 </Routes>
             </>
             :
