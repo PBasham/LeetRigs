@@ -22,6 +22,7 @@ export default function NavBar({ user, setUser }) {
     const [homeActive, setHomeActive] = useState(true)
     const [orderHistoryActive, setOrderHistoryActive] = useState(false)
     const [checkoutPageActive, setCheckoutPageActive] = useState(false)
+    const [AboutUsActive, setAboutUsActive] = useState(false)
 
     /*========================================
             functions
@@ -38,11 +39,16 @@ export default function NavBar({ user, setUser }) {
         allInactive()
         setCheckoutPageActive(!checkoutPageActive)
     }
+    const AboutUsClicked = () => {
+        allInactive()
+        setAboutUsActive(!AboutUsActive)
+    }
 
     const allInactive = () => {
         setHomeActive(false)
         setOrderHistoryActive(false)
         setCheckoutPageActive(false)
+        setAboutUsActive(false)
     }
     
     return (
@@ -80,9 +86,25 @@ export default function NavBar({ user, setUser }) {
                     Order History
                 </button>
             }
+
+                {/* {!About ? */}
+                <Link 
+                    to="/about" 
+                    // element={<AboutUsPage />}
+                    onClick={AboutUsClicked}
+                    >
+                <button className="nav-btn flex-start">
+                    Order History
+                </button>
+                 </Link> 
+                :
+                <button className="nav-btn flex-start nav-btn-active">
+                    Order History
+                </button>
+            
             {user}
             <span className="number welcome">Welcome Back, Me!</span>
-            {console.log(user)}
+            {/* {console.log(req.user)} */}
             {/* <button className="nav-btn flex-start">Order History</button> */}
                 
             <div className="flex-end">
