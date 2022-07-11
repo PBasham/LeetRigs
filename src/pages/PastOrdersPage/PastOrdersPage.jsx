@@ -5,7 +5,7 @@ import PreviousOrderItems from '../../components/PreviousOrderItems/PreviousOrde
 import './PastOrdersPage.css'
 
 
-export default function PastOrdersPage() {
+export default function PastOrdersPage({toggleActiveNavBtn}) {
 	const [previousOrders, setPreviousOrders] = useState([]);
 
 	useEffect(function () {
@@ -13,6 +13,7 @@ export default function PastOrdersPage() {
 			let userOrders = await OrderApi.pastOrders();
 			setPreviousOrders(userOrders);
 		})();
+        toggleActiveNavBtn(1)
 	}, []);
 
 	const pastOrders = previousOrders.map((previousOrder) => (

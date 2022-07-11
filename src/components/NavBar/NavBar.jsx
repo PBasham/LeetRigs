@@ -3,79 +3,71 @@
 ========================================*/
 import { useState } from "react"
 import { Link } from "react-router-dom"
-
 /*========================================
-        import Pages
+        import pages
 ========================================*/
 import CheckoutPage from "../../pages/CheckoutPage/CheckoutPage"
-import ItemPage from "../../pages/ItemPage/ItemPage"
-import UserLogOut from "../UserLogOut/UserLogOut"
-import PastOrdersPage from "../../pages/PastOrdersPage/PastOrdersPage"
-import AboutUsPage from "../../pages/AboutUsPage/AboutUsPage.jsx"
+import UserLogOut from "../UserLogOut/UserLogOut.jsx"
 /*========================================
         import Css
 ========================================*/
 import "../../index.css"
 import "./NavBar.css"
 
-export default function NavBar({ user, setUser }) {
+export default function NavBar({ user, setUser, activeNavLink, toggleActiveNavBtn }) {
     // create useStates
 
     /*========================================
             functions
     ========================================*/
-    const handleNavBtnClick = () => {
-        toggleActiveNavBtnStyle()
-    }
     const toggleActiveNavBtnStyle = (index) => {
-        // if ()
+
+        if (activeNavLink.buttons[index] === activeNavLink.activeButton) {
+            return activeNavLink.buttons[index].name === "Cart" ?
+                "nav-btn cart nav-btn-active" : "nav-btn nav-btn-active"
+            // return "nav-btn nav-btn-active"
+        } else {
+
+            return activeNavLink.buttons[index].name === "Cart" ?
+                "nav-btn cart" : "nav-btn"
+        }
     }
+
     /*=== FUNCTIONS END ===*/
     return (
-
         <div className="nav-bar">
-            <Link
-                to="/Home"
-                element={<ItemPage />}
-                onClick={handleNavBtnClick}
-                className="nav-btn nav-btn-active"
-            >
-                Home
-            </Link>
+            {activeNavLink.buttons.map((navButton, index) => (
+                navButton.name === "Cart" ? null :
+                    <Link
+                        key={index}
+                        className={toggleActiveNavBtnStyle(index)}
+                        to={navButton.to}
+                        element={navButton.element}
+                        onClick={() => {
+                            toggleActiveNavBtn(index)
+                        }}
+                    >
+                        {navButton.name}
+                    </Link>
 
-
-            <Link
-                to="/pastorders"
-                element={<PastOrdersPage />}
-                onClick={handleNavBtnClick}
-                className="nav-btn"
-            >
-                Order History
-            </Link>
-
-            <Link
-                to="/about"
-                element={<AboutUsPage />}
-                onClick={handleNavBtnClick}
-                className="nav-btn"
-            >
-                    About Us
-            </Link>
+            ))}
 
 
             <span className="number welcome">Welcome Back, {user.name}!</span>
 
             <div className="flex-end">
                 <span className="number">1-337-LeetRigs</span>
-                {/* This is the Log Out Button */}
-                    <Link
-                        to="/checkout"
-                        element={<CheckoutPage />}
-                        onClick={handleNavBtnClick}
-                        className="nav-btn cart"
-                    >
-                    </Link>
+                <Link
+                    to="/checkout"
+                    element={<CheckoutPage />}
+                    className={toggleActiveNavBtnStyle(3)}
+                    onClick={() => {
+                        toggleActiveNavBtn(3)
+                    }}
+                >
+                </Link>
 
+                {/* This is the Log Out Button */}
                 <UserLogOut user={user} setUser={setUser} />
 
             </div>

@@ -1,4 +1,12 @@
-export default function AboutUsPage() {
+import { useEffect } from "react"
+
+export default function AboutUsPage({ toggleActiveNavBtn }) {
+
+    useEffect(() => {
+        toggleActiveNavBtn(2)
+    }, [])
+
+
     return (
         <div className="about-div-wrapper">
             <h1>About Us</h1>

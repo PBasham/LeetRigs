@@ -77,6 +77,7 @@ a {
 	padding: 2px;
 	width: 40px;
 	height: 40px;
+    color: transparent;
 	border-radius: 50%;
 	background: url(https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/322/shopping-cart_1f6d2.png);
 	background-position: center;

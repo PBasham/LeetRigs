@@ -11,7 +11,7 @@ import * as ItemsApi from "../../utilities/items-api.js"
 import "../../index.css"
 import "./ItemPage.css"
 
-export default function ItemPage({ setShowItemDetail, setItemDetail, addItemToCartClick }) {
+export default function ItemPage({ setShowItemDetail, setItemDetail, addItemToCartClick,  toggleActiveNavBtn }) {
 
     const [storeItems, setStoreItems] = useState([])
     //const [search, setSearch] = useState("")
@@ -20,8 +20,11 @@ export default function ItemPage({ setShowItemDetail, setItemDetail, addItemToCa
         (async function getStoreItems(){
             const items = await ItemsApi.getAll()
             setStoreItems(items)
-        })()
+        })();
+        toggleActiveNavBtn(0)
     }, [])
+    
+
     
     // useEffect(function () {
     //     (async function getSearch(){
