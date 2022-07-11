@@ -25,7 +25,7 @@ return (
                 setCart={setCart}
                 />
         </div>
-
+    <footer className='footer-return'>Return Policy: Free 30 day returns if you don't love your new rig!</footer>
     </div>
 )
 }
