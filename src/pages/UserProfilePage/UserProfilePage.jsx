@@ -1,7 +1,7 @@
 /*========================================
         import dependencies
 ========================================*/
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import UserProfileInfo from "../../components/UserProfileInfo/UserProfileInfo"
 import UserProfileEdit from "../../components/UserProfileEdit/UserProfileEdit"
 /*========================================
@@ -9,9 +9,14 @@ import UserProfileEdit from "../../components/UserProfileEdit/UserProfileEdit"
 ========================================*/
 import "./UserProfilePage.css"
 
-export default function UserProfilePage({ user, setUser }) {
+export default function UserProfilePage({ user, setUser, toggleActiveNavBtn }) {
 
+    useEffect(() => {
+        toggleActiveNavBtn(4)
+    }, [])
+    
     const [editState, setEditState] = useState(false)
+
 
     return (
 

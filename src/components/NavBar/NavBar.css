@@ -60,6 +60,8 @@ a {
     margin-left: 20px;
 }
 
+
+
 .cart {
     display: flex;
     justify-content: center;
@@ -86,6 +88,16 @@ a {
 }
 
 .profile-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 15px 5px 0;
+    padding: 2px;
+    width: 40px;
+    height: 40px;
+    color: transparent;
+    border-radius: 50%;
+    border: none;
     background:
         linear-gradient(to bottom right,
             rgba(119, 237, 255, 0.5) 50%,
@@ -94,8 +106,14 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    box-shadow: 0 0 3px 3px var(--color-navBtnShadow);
+    transition: 250ms ease-in;
 }
-
+.profile-link:hover {
+    background-color: var(--color-navBtnAccent);
+    box-shadow: 0 0 0 0 transparent,
+        inset 0 0 2px 2px var(--color-navBtnShadow);
+}
 .number {
     margin-right: 20px;
     font-size: 18px;

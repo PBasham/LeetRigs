@@ -25,12 +25,24 @@ export default function NavBar({ user, setUser, activeNavLink, toggleActiveNavBt
 
         if (activeNavLink.buttons[index] === activeNavLink.activeButton) {
             return activeNavLink.buttons[index].name === "Cart" || activeNavLink.buttons[index].name === "Profile" ?
-                "nav-btn cart nav-btn-active" : "nav-btn nav-btn-active"
+
+                activeNavLink.buttons[index].name === "Cart" ? 
+                        "nav-btn cart nav-btn-active" 
+                    : 
+                        "nav-btn profile-link nav-btn-active" 
+                : 
+                    "nav-btn nav-btn-active"
             // return "nav-btn nav-btn-active"
         } else {
 
-            return activeNavLink.buttons[index].name === "Cart" || activeNavLink.buttons[index].name === "Profile " ?
-                "nav-btn cart" : "nav-btn"
+            return activeNavLink.buttons[index].name === "Cart" || activeNavLink.buttons[index].name === "Profile" ?
+
+                activeNavLink.buttons[index].name === "Cart" ? 
+                        "nav-btn cart" 
+                    : 
+                        "nav-btn profile-link" 
+                : 
+                    "nav-btn"
         }
     }
 

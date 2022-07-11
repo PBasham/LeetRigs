@@ -4,6 +4,7 @@ export default function UserProfileEdit({ user, setUser, setEditState }) {
     const [editCredentials, seteditCredentials] = useState({
         name: user.name,
         email: user.email,
+        img: "",
     });
 
     const handleUpdateClick = () => {
@@ -24,6 +25,8 @@ export default function UserProfileEdit({ user, setUser, setEditState }) {
                 <div className="user-profile-img">
                 </div>
                 <div className="user-profile-info">
+                    <h3>Profile Picture URL</h3>
+                    <input name="picture" Value={user.picture} onChange={handleChange}></input>
                     {/* display user name */}
                     <h3>Name</h3>
                     <input name="name" Value={user.name} onChange={handleChange}></input>
