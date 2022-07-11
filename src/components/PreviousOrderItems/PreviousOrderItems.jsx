@@ -1,33 +1,33 @@
 import React from 'react';
 import "./PreviousOrderItems.css"
 import PastOrdersPage from "../../pages/PastOrdersPage/PastOrdersPage"
+import "../CartLineItems/CartLineItems.css"
 
 //
 export default function PreviousOrderItems({ orderItem }) {
 	return (
     <>
       
-      <div className='order-id'>
-        {/* Model #: <strong>{orderItem._id}</strong> */}
-      </div>
-			<div className="order-item-container">
-				<div className="order-item-name">
+      
+			<div className="checkout-cart-item">
+				<div className="cart-title-div">
 					{orderItem.item.title}
 				</div>
-				<div className="order-item-price">
+				<div className="item-price-amount">
 					Price: ${orderItem.item.price}
         </div>
-        <div className='order-item-qty'>
+        <div className='order-item-quantity'>
            QTY: {orderItem.qty}
         </div>
-				<div>
+				
 					<img
-						className="order-item-pic"
+						className="cart-item-img"
 						src={orderItem.item.image}
 						alt="itempic"
 					/>
-        </div>
+        
 			</div>
 		</>
 	);
 }
+
