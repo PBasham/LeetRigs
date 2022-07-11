@@ -39,7 +39,7 @@ function App() {
 
     return (
         <div className="App">
-            {user ? <NavBar setUser={setUser} /> : null}
+            {user ? <NavBar user={user} setUser={setUser} /> : null}
             {showItemDetail ? <ItemDetail setShowItemDetail={setShowItemDetail} itemDetail={itemDetail} addItemToCartClick={addItemToCartClick} /> : null}
             {user ?
                 <>

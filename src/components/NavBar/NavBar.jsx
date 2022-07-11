@@ -89,7 +89,7 @@ export default function NavBar({ user, setUser }) {
 
             <Link
                 to="/about"
-                // element={<AboutUsPage />}
+                element={<AboutUsPage />}
                 onClick={AboutUsClicked}
             >
                 <button className="nav-btn flex-start">
@@ -98,8 +98,7 @@ export default function NavBar({ user, setUser }) {
             </Link>
 
 
-            {user}
-            <span className="number welcome">Welcome Back, Me!</span>
+            <span className="number welcome">Welcome Back, {user.name}!</span>
             {/* {console.log(req.user)} */}
             {/* <button className="nav-btn flex-start">Order History</button> */}
 
