@@ -9,6 +9,7 @@
 
 .nav-bar {
 	display: flex;
+    position: fixed;
 	justify-content: flex-start;
 	flex-direction: row;
 	padding: 0 10px;
@@ -16,6 +17,7 @@
 	height: 50px;
 	background-color: var(--color-nav);
 	box-shadow: 0 0 5px 1px black;
+    z-index: 100;
 }
 
 .number {

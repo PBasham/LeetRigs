@@ -3,7 +3,8 @@
 ========================================*/
 import React, { useState } from 'react';
 import { Routes, Route, Navigate } from "react-router-dom"
-import { getUser } from '../../utilities/users-service';
+import { getUser } from '../../utilities/users-service.js';
+import * as OrderApi from "../../utilities/orders-api.js"
 
 /*========================================
 Import Pages
@@ -22,38 +23,38 @@ import './App.css';
 
 
 function App() {
+    const [user, setUser] = useState(getUser())
+    const [showItemDetail, setShowItemDetail] = useState(false)
+    const [itemDetail, setItemDetail] = useState()
 
-const [user, setUser] = useState(getUser())
-
-        const [showItemDetail, setShowItemDetail] = useState(false)
-        const [ itemDetail, setItemDetail] = useState()
-        
-        /*========================================
-                functions
-        ========================================*/
-        // const getItemDetailInfo = (storeItem) => {
-        //         setItemDetail(storeItem)
-        // }
+    /*========================================
+    functions
+    ========================================*/
+    // function to add tiems to cart
+    const addItemToCartClick = (itemId) => {
+        OrderApi.addToCart(itemId)
+    }
+    //===*** END FUNCTIONS***===//
 
 
-return (
+    return (
         <div className="App">
-        { user ? <NavBar setUser={setUser} /> : null }
-        {showItemDetail ? <ItemDetail setShowItemDetail={setShowItemDetail} itemDetail={itemDetail}/> : null}
-        {user ?
+            {user ? <NavBar setUser={setUser} /> : null}
+            {showItemDetail ? <ItemDetail setShowItemDetail={setShowItemDetail} itemDetail={itemDetail} addItemToCartClick={addItemToCartClick} /> : null}
+            {user ?
                 <>
-                <Routes>
-                        <Route path="/items" element={<ItemPage setShowItemDetail={setShowItemDetail} setItemDetail={setItemDetail} />} />
+                    <Routes>
+                        <Route path="/items" element={<ItemPage setShowItemDetail={setShowItemDetail} setItemDetail={setItemDetail} addItemToCartClick={addItemToCartClick} />} />
                         <Route path="/*" element={<Navigate to="/items" />} />
                         <Route path="/checkout" element={<CheckoutPage user={user} setUser={setUser} />} />
                         <Route path="/pastorders" element={<PastOrdersPage user={user} setUser={setUser} />} />
                         {/* <Route path="/about" element={<AboutUsPage user={user} setUser={setUser} />} /> */}
-                </Routes>
+                    </Routes>
                 </>
-        :
-        <AuthPage setUser={setUser}/>}
-</div>
-);
+                :
+                <AuthPage setUser={setUser} />}
+        </div>
+    );
 }
 
 export default App;
