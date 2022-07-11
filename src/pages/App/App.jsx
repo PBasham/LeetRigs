@@ -68,7 +68,7 @@ return (
                     <Route path="/pastorders" element={<PastOrdersPage user={user} setUser={setUser} toggleActiveNavBtn={toggleActiveNavBtn}/>} />
                     <Route path="/about" element={<AboutUsPage user={user} setUser={setUser} toggleActiveNavBtn={toggleActiveNavBtn}/>} />
                     <Route path="/checkout" element={<CheckoutPage user={user} setUser={setUser} toggleActiveNavBtn={toggleActiveNavBtn}/>} />
-                    <Route path="/profile" element={<UserProfilePage user={user}/>} />
+                    <Route path="/profile" element={<UserProfilePage user={user} setUser={setUser}/>} />
                 </Routes>
             </>
             :
