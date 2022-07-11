@@ -27,13 +27,25 @@ function App() {
     const [user, setUser] = useState(getUser())
     const [showItemDetail, setShowItemDetail] = useState(false)
     const [itemDetail, setItemDetail] = useState()
-
+    const [activeNavLink, setactiveNavLink] = useState({
+        activeButton: null,
+        buttons: [{id: 1, name: "Home"}, {id: 2, name: "Order History"}, {id: 3, name: "About Us"}, {id: 4, name: "Cart"}]
+    })
+    
     /*========================================
     functions
     ========================================*/
+    // this function is to keep track of the active button / page.
+    const toggleActiveNavBtn = (index) => {
+        setactiveNavLink({ ...activeNavLink, activeButton: activeNavLink.buttons[index]})
+    }
     // function to add tiems to cart
     const addItemToCartClick = (itemId) => {
         OrderApi.addToCart(itemId)
+    }
+
+    const toggleActiveNavBtnStyle = (index) => {
+        // if ()
     }
     //===*** END FUNCTIONS***===//
 

@@ -20,107 +20,58 @@ import "./NavBar.css"
 
 export default function NavBar({ user, setUser }) {
     // create useStates
-    const [homeActive, setHomeActive] = useState(true)
-    const [orderHistoryActive, setOrderHistoryActive] = useState(false)
-    const [checkoutPageActive, setCheckoutPageActive] = useState(false)
-    const [AboutUsActive, setAboutUsActive] = useState(false)
 
     /*========================================
             functions
     ========================================*/
-    const homeClicked = () => {
-        allInactive()
-        setHomeActive(!homeActive)
-    }
-    const orderHistoryClicked = () => {
-        allInactive()
-        setOrderHistoryActive(!orderHistoryActive)
-    }
-    const checkoutPageClicked = () => {
-        allInactive()
-        setCheckoutPageActive(!checkoutPageActive)
-    }
-    const AboutUsClicked = () => {
-        allInactive()
-        setAboutUsActive(!AboutUsActive)
-    }
+    const handleNavBtnClick = () => {
 
-    const allInactive = () => {
-        setHomeActive(false)
-        setOrderHistoryActive(false)
-        setCheckoutPageActive(false)
-        setAboutUsActive(false)
     }
 
     return (
 
         <div className="nav-bar">
-            {!homeActive ?
-                <Link
-                    to="/Home"
-                    element={<ItemPage />}
-                    onClick={homeClicked}
-                    className="nav-bar-linkbtn"
-                >
-                    <button className="nav-btn flex-start">
-                        Home
-                    </button>
-                </Link>
-                :
-                <button className="nav-btn flex-start nav-btn-active">
-                    Home
-                </button>
-            }
+            <Link
+                to="/Home"
+                element={<ItemPage />}
+                onClick={handleNavBtnClick}
+                className="nav-btn flex-start"
+            >
+                Home
+            </Link>
 
-            {!orderHistoryActive ?
-                <Link
-                    to="/pastorders"
-                    element={<PastOrdersPage />}
-                    onClick={orderHistoryClicked}
-                >
-                    <button className="nav-btn flex-start">
-                        Order History
-                    </button>
-                </Link>
-                :
-                <button className="nav-btn flex-start nav-btn-active">
-                    Order History
-                </button>
-            }
+
+            <Link
+                to="/pastorders"
+                element={<PastOrdersPage />}
+                onClick={handleNavBtnClick}
+                className="nav-btn flex-start"
+            >
+                Order History
+            </Link>
 
             <Link
                 to="/about"
                 element={<AboutUsPage />}
-                onClick={AboutUsClicked}
+                onClick={handleNavBtnClick}
+                className="nav-btn flex-start"
             >
-                <button className="nav-btn flex-start">
                     About Us
-                </button>
             </Link>
 
 
             <span className="number welcome">Welcome Back, {user.name}!</span>
-            {/* {console.log(req.user)} */}
-            {/* <button className="nav-btn flex-start">Order History</button> */}
 
             <div className="flex-end">
                 <span className="number">1-337-LeetRigs</span>
                 {/* This is the Log Out Button */}
-                {!checkoutPageActive ?
                     <Link
                         to="/checkout"
                         element={<CheckoutPage />}
-                        onClick={checkoutPageClicked}
+                        onClick={handleNavBtnClick}
+                        className="nav-btn cart"
                     >
-                        <button
-                            className="nav-btn cart">
-                        </button>
                     </Link>
-                    :
-                    <button
-                        className="nav-btn cart nav-btn-active">
-                    </button>
-                }
 
                 <UserLogOut user={user} setUser={setUser} />
 
