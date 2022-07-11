@@ -12,6 +12,7 @@
     position: fixed;
 	justify-content: flex-start;
 	flex-direction: row;
+    top:0;
 	padding: 0 10px;
 	width: 100%;
 	height: 50px;
