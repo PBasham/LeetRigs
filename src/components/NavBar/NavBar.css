@@ -45,19 +45,19 @@ a {
         Button Styling
 -----------------------------------------*/
 .nav-btn {
+    display: grid;
+    place-items: center;
 	width: 100px;
 	height: 50px;
 	padding: 5px;
 	font-size: 16px;
 	font-weight: bold;
-	border: none;
+    border-right: 1px solid black;
 	background-color: transparent;
 	transition: 250ms ease-in;
 }
-/* .nav-bar-linkbtn {
 
-} */
-.nav-btn.flex-start:not(:first-child):not(:last-child) {
+.nav-btn:first-child {
 	border-left: 1px solid grey;
 	/* border-right: 1px solid grey; */
 }
@@ -109,4 +109,9 @@ a {
 	background-color: var(--color-navBtnAccent);
 	box-shadow: inset 0 0 3px 1px var(--color-navBtnShadow),
 		inset 0 0 2px 2px var(--color-navBtnShadow);
+}
+
+.border-sides {
+    border: 1px solid black;
+    border-width: 0 1px 0 1px;
 }
