@@ -57,7 +57,7 @@ a {
 	transition: 250ms ease-in;
 }
 
-.nav-btn.flex-start:first-child {
+.nav-btn:first-child {
 	border-left: 1px solid grey;
 	/* border-right: 1px solid grey; */
 }

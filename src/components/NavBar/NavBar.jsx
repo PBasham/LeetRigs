@@ -25,9 +25,12 @@ export default function NavBar({ user, setUser }) {
             functions
     ========================================*/
     const handleNavBtnClick = () => {
-
+        toggleActiveNavBtnStyle()
     }
-
+    const toggleActiveNavBtnStyle = (index) => {
+        // if ()
+    }
+    /*=== FUNCTIONS END ===*/
     return (
 
         <div className="nav-bar">
@@ -35,7 +38,7 @@ export default function NavBar({ user, setUser }) {
                 to="/Home"
                 element={<ItemPage />}
                 onClick={handleNavBtnClick}
-                className="nav-btn flex-start"
+                className="nav-btn nav-btn-active"
             >
                 Home
             </Link>
@@ -45,7 +48,7 @@ export default function NavBar({ user, setUser }) {
                 to="/pastorders"
                 element={<PastOrdersPage />}
                 onClick={handleNavBtnClick}
-                className="nav-btn flex-start"
+                className="nav-btn"
             >
                 Order History
             </Link>
@@ -54,7 +57,7 @@ export default function NavBar({ user, setUser }) {
                 to="/about"
                 element={<AboutUsPage />}
                 onClick={handleNavBtnClick}
-                className="nav-btn flex-start"
+                className="nav-btn"
             >
                     About Us
             </Link>

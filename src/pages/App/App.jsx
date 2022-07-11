@@ -44,9 +44,6 @@ function App() {
         OrderApi.addToCart(itemId)
     }
 
-    const toggleActiveNavBtnStyle = (index) => {
-        // if ()
-    }
     //===*** END FUNCTIONS***===//
 
 
