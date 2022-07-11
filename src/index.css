@@ -34,3 +34,20 @@ h1 {
     color: #2A2b2dff;
     font-family: "Orbitron", sans-serif;
 }
+
+input {
+    font-family: 'Secular One', sans-serif;
+}
+input {
+    padding: 2px 10px;
+    height: 25px;
+    width: clamp(200px, 50vw, 80vw);
+    border-radius: 15px;
+    border: 1px solid rgb(121, 209, 238);
+    box-shadow: 0 0 1px 1px rgb(121, 209, 238);
+    outline: none;
+    transition: 250ms;
+}
+input:focus {
+    box-shadow: 0 0 4px 1px blue;
+}
