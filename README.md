@@ -19,28 +19,33 @@ Hey there! We started LeetRigs about a week ago, as life long avid gamers we hav
 - As a user I want to be able to remove items from my cart using qty incrementer
 - As a user I want to be able to complete my order upon clicking checkout button
 - As a user I want to be able to view my previous orders via the order history tab(invoice#, items, order date, total, etc)
+- As a user I want to be able to utilize the search bar to query for the model name or keyword I am looking for
 <hr>
 
 ## Wireframes:
+![ERD Picture](public/imgs/readMe/MainPage-wireframe.jpeg)
 <hr>
 
 ## ERD:
 ![ERD Picture](public/imgs/readMe/readme-erd.png)
 <hr>
 
-## Route Table:
-
-<hr>
-
 ## Technologies Used:
 - React
 - Express
-- JavaScript
-- NodeJS
-- MongoBD
+- Nodejs
+- Trello
+- MongoDB
+- Mongoose
+- Mongo Atlas
+- Heroku
 <hr>
 
 ## MVP Requirments:
+We are able Create a user Login, LogOut.
+Using the API we are also able to add to cart, add more in quantity remove the item from cart.
+We are able to see the Order history.
+Once the item in cart, when clicked on checkout it will be added to the order history. 
 <hr>
 
 ## Stretch Goals / ICE BOX:
