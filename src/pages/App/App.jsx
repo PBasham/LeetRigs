@@ -7,7 +7,7 @@ import { getUser } from '../../utilities/users-service.js';
 import * as OrderApi from "../../utilities/orders-api.js"
 
 /*========================================
-Import Pages
+        Import Pages
 ========================================*/
 import NavBar from '../../components/NavBar/NavBar';
 import AuthPage from "../../pages/AuthPage/AuthPage.jsx"
