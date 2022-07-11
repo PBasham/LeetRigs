@@ -14,9 +14,9 @@ export default function PreviousOrder({ pastOrder }) {
     return (
         <>
             <div className="checkout-cart-border">
-                {orderItems.length ? (
-                    <>
-                        <div className="checkout-cart">
+                <div className="checkout-cart">
+                    {orderItems.length ? (
+                        <>
 
                             <div className='invoice'>
                                 {/* <div className="order-details"> */}
@@ -39,11 +39,11 @@ export default function PreviousOrder({ pastOrder }) {
                             <div className="order-items">
                                 {orderItems}
                             </div>
-                        </div>
-                    </>
-                ) : (
-                    <div>No Previous Orders</div>
-                )}
+                        </>
+                    ) : (
+                        <div>No Previous Orders</div>
+                    )}
+                </div>
             </div>
         </>
     );
