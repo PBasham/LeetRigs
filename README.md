@@ -3,8 +3,8 @@ Premium gear to make sure you destroy the competition!
 <hr>
 
 # Premise:
-
-Hey there! We started LeetRigs about a week ago, as life long avid gamers we have always had an undying passion for PC gaming. From RTS, to FPS and MMO's we have played them all and now decided to merge our love for gaming alongside creating custom PC builds together. All of our rigs are built in house with the latest top-notch hardware as well as put through extensive testing before ever being placed in our inventory. It's extremely important to us that you receive the highest quality service and we treat every PC as if it's our own. Launching our store has been an amazing experience so far and we cannot wait to make a hand-crafted custom rig for you, we also invite you to join our discord as we game with our customers regularly. Let's play!
+LeetRigs is a Fullstack CRUD eCommerce application that allows users to create an account and view/purchase from our inventory.
+Our store sells only the highest quality prebuilt gaming PCs in addition to various hardware if you prefer to upgrade your existing rig. We hope you enjoy browsing our collection, you may add a product to your cart too store for later if you're not quite ready to purchase.
 ---
 
 ## The User Story:
