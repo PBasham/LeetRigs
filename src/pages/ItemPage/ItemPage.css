@@ -5,15 +5,23 @@
     flex-direction: column;
     height: 400px;
     width: 100%;
-    /* color: #2DA8D8FF; */
-    /* background-color: rgb(185, 200, 230); */
-    background: linear-gradient(to bottom right, rgb(185, 200, 230) 50%, #237a92);
+    color: whitesmoke;
+    text-shadow: 0 2px 15px black;
+    background:
+        linear-gradient(to bottom right,
+        rgba(119, 237, 255, 0.5) 50%,
+        rgba(145, 172, 23, 0.5)),
+        url(https://www.wepc.com/wp-content/uploads/2021/03/Custom-Water-Cooling-EKWB.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     box-shadow: inset 0 0 5px 1px black;
 }
 
 .store-name {
-    font-size: 4em;
-    font-family: 'Galada', cursive;
+    font-size: 8vw;
+    font-family: 'Iceland', sans-serif;
+    font-style: italic;
 }
 
 .item-page-filterbtns {
@@ -24,9 +32,7 @@
     background-color: rgb(251, 250, 240);
 }
 
-.filter-btn {
-    
-}
+.filter-btn {}
 
 .item-page-div {
     position: relative;
