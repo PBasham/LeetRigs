@@ -14,7 +14,7 @@ export default function PreviousOrderItems({ orderItem }) {
 					{orderItem.item.title}
 				</div>
 				<div className="item-price-amount">
-					Price: ${orderItem.item.price}
+					Price: ${orderItem.item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
         </div>
         <div className='order-item-quantity'>
            QTY: {orderItem.qty}
