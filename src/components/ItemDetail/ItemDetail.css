@@ -5,6 +5,7 @@
 
 .item-detail-container {
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -15,11 +16,14 @@
     background-color: rgba(38, 41, 50, 0.5);
     z-index: 20;
 }
+.item-detail-card-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
 .item-detail-card {
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; */
     position: fixed;
     padding: 80px 50px;
     width: 80%;
@@ -53,7 +57,7 @@
 .item-detail-close-btn:hover {
     color: white;
     box-shadow: 0 0 5px 1px grey, inset 0 0 0 2em red;
-    /* background-color: red; */
+    transform: scale(1.2);
 }
 
 .item-detail-name {
@@ -86,8 +90,7 @@
 .btn-add {
     padding: 5px 10px;
     font-size: .5em;
-    color: var(--color-btnTxt);
-    background: var(--color-btn);
+    background: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%);
     border-radius: 10px;
     border: none;
     box-shadow: 0 0 5px 1px grey;
@@ -95,8 +98,8 @@
 }
 
 .btn-add:hover {
-    color: black;
-    transform: scale(1.05);
+    border: 2px solid blue;
+    transform: scale(1.1);
 }
 
 .btn-add:active {
