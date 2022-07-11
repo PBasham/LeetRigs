@@ -46,5 +46,14 @@ Content-Type: application/json
   "_id": "62cc53068876811779d27cb0"
 }
 
+###
 
+PUT http://localhost:3000/api/users/update
+Content-Type: application/json
+# Authorized: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyY2M1NTc5YzhjMzE5ZDYzYzc4NThjYiIsIm5hbWUiOiJNZWdhbiIsImVtYWlsIjoibWVnYW5AZ21haWwuY29tIiwiY3JlYXRlZEF0IjoiMjAyMi0wNy0xMVQxNjo1MzoxMy4wMTZaIiwidXBkYXRlZEF0IjoiMjAyMi0wNy0xMVQxNjo1MzoxMy4wMTZaIiwiX192IjowfSwiaWF0IjoxNjU3NTU4NDA0LCJleHAiOjE2NTc2NDQ4MDR9.69hcx2DnabsGrxgh16shRjkPWKvPAEnFAKTutiAEMaU
+
+{
+  "_id": "62c87747c1c54d66cc680e08",
+  "email": "jess@gmail.com"
+}
 

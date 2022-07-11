@@ -12,7 +12,8 @@ module.exports = {
   create,
   login,
   checkToken,
-  remove
+  remove,
+  update
 }
 
 /*========================================
@@ -57,7 +58,19 @@ async function remove(req, res) {
   }
 }
 
-
+async function update(req, res) {
+  let user_id = "62c87747c1c54d66cc680e08"
+ let newname = User.findByIdAndUpdate(user_id, { email: 'jess@gmail.com' },
+    function (err, docs) {
+      if (err) {
+        console.log(err)
+      }
+      else {
+        console.log("Updated User : ", docs);
+      }
+      res.json(newname)
+    });
+}
 /*========================================
         HELPER FUNCTIONS
 ========================================*/
