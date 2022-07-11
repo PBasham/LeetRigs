@@ -11,7 +11,6 @@ export default function PreviousOrderItems({ orderItem }) {
         {/* Model #: <strong>{orderItem._id}</strong> */}
       </div>
 			<div className="order-item-container">
-				Placed on: {orderItem.item.createdAt.split('T')[0]}
 				<div className="order-item-name">
 					{orderItem.item.title}
 				</div>

@@ -23,11 +23,18 @@ export default function PreviousOrder({ pastOrder }) {
           // <div>Order Details</div>
             <>
               <div className="checkout-cart">
-                Invoice Number: {pastOrder._id}
-                <br />
-                ${pastOrder.orderTotal}
+                <div className='invoice-id'>
+                  Invoice #: {pastOrder._id}
+                </div>
+                <div className='order-total'>
+                  Total: ${pastOrder.orderTotal}
+                </div>
+                <div className='placed-on'>
+                  Placed on: {pastOrder.createdAt.split('T')[0]}
+                </div>
+                <div className='order-items'>
                 {orderItems}
-                <div>Order Total: MATH GOES HERE(its late...)</div>
+                </div>
               </div>
               </>
           ) : (
