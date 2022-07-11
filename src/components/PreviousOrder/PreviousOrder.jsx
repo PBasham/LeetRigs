@@ -24,7 +24,7 @@ export default function PreviousOrder({ pastOrder }) {
             <>
               <div className="checkout-cart">
                 <div className='invoice-id'>
-                  Invoice #: {pastOrder._id}
+                  Invoice #: <strong>{pastOrder._id}</strong>
                 </div>
                 <div className='order-total'>
                   Total amount: ${pastOrder.orderTotal}
