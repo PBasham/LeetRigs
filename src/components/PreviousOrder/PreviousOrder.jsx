@@ -17,20 +17,21 @@ export default function PreviousOrder({ pastOrder }) {
 				{orderItems.length ? (
           <>
 						<div className="checkout-cart">
-              {/* <div className="cart-title-div"> */}
+            
               <div className='invoice'>
-							<div className="order-details">
+							{/* <div className="order-details"> */}
 								Invoice Details
-							</div>
-							<span className='invoice-number'>
-								Invoice #:{' '}
-								<strong>{pastOrder._id}</strong>
-                </span>
+							{/* </div> */}
+							
                 </div>
 							<div className="po">
 								Placed on:{' '}
 								{pastOrder.createdAt.split('T')[0]}
-							</div>
+              </div>
+              <span className='invoice-number'>
+								Invoice #:{' '}
+								<strong>{pastOrder._id}</strong>
+                </span>
 
 							<div className="order-total">
 								Total amount: ${pastOrder.orderTotal}

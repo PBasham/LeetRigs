@@ -1,3 +1,8 @@
+* {
+  font-family: "Orbitron", sans-serif;
+  font-weight: bold
+}
+
 .order-item-container {
   color: black;
   padding: 3vh;
@@ -53,6 +58,6 @@
 .item-price-amount {
   font-size: 24px;
   margin-left: 90vh;
-  margin-top: 9vh;
+  margin-top: 6vh;
   
 }
