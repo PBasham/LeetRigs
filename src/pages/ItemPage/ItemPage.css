@@ -37,7 +37,8 @@
 .item-page-div {
     position: relative;
     width: 100%;
-    background-color: rgb(185, 200, 230);
+    height: 100%;
+    /* background-color: rgb(185, 200, 230); */
     /* background: linear-gradient(to right, #b7e5f2, rgb(185, 200, 230) 30%, #b7e5f2 140%); */
     box-shadow: inset 0 0 5px 1px black;
 }
