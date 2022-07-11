@@ -53,7 +53,7 @@ export default function NavBar({ user, setUser, activeNavLink, toggleActiveNavBt
             ))}
 
 
-            <span className="number welcome">Welcome Back, {user.name}!</span>
+            <span className="welcome">Welcome Back, {user.name}!</span>
 
             <div className="flex-end">
                 <span className="number">1-337-LeetRigs</span>
