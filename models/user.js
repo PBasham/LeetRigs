@@ -28,6 +28,10 @@ const usersSchema = new Schema(
 			minLength: 3,
 			required: true
 		},
+		profilePicture: {
+			type: String,
+			trim: true
+		},
 	},
 	{
 		timestamps: true,
