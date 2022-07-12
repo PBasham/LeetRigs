@@ -21,4 +21,7 @@ router.get('/check-token', ensureLoggedIn, usersCtrl.checkToken)
 // User delete route for deletion
 router.delete('/delete', usersCtrl.remove)
 
+// User put route for updating
+router.put('/update', usersCtrl.update)
+
 module.exports = router
