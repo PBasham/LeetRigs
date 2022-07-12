@@ -4,6 +4,7 @@
 const User = require('../../models/user')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
+// const usersService = require('../../src/utilities/users-service')
 
 /*========================================
         EXPORTS
@@ -21,7 +22,7 @@ module.exports = {
 ========================================*/
 function checkToken(req, res) {
   console.log('req.user', req.user);
-  res.json(req.exp)
+  res.status(401).json({ message: "gtfo" })
 }
 
 async function login(req, res) {
@@ -50,12 +51,14 @@ async function create(req, res) {
 
 async function remove(req, res) {  
   try {
-    const user = await User.findOneAndDelete({ _id: req.body._id });
-    console.log(user)
-    res.json(user)
+    const userId = req.user._id
+    await User.findByIdAndRemove(userId);
+    console.log("REMOVED USER")
   } catch (err) {
     res.status(400).json(err);
   }
+  console.log("usrsvc logout after delete")
+    // setUser(null)
 }
 
 async function update(req, res) {

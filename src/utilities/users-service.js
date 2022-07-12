@@ -13,8 +13,10 @@ export async function login(credentials){
 }
 
 export async function remove(credentials) {
-  const token = await usersAPI.remove(credentials);
-  localStorage.removeItem(token)
+  await usersAPI.remove(credentials);
+  // localStorage.removeItem('token')
+  console.log("hit remove function")
+  
 }
 
 export function getToken(){
@@ -34,4 +36,5 @@ export function getUser(){
 }
  export function logOut(){
    localStorage.removeItem('token')
+   console.log("token gone")
  }
