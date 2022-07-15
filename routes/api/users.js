@@ -9,6 +9,7 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn')
 /*========================================
         ROUTERS
 ========================================*/
+// BASE /api/users
 // User post route for creation
 router.post('/', usersCtrl.create);
 
@@ -19,7 +20,7 @@ router.post('/login', usersCtrl.login);
 router.get('/check-token', ensureLoggedIn, usersCtrl.checkToken)
 
 // User delete route for deletion
-router.delete('/delete', usersCtrl.remove)
+router.delete('/:id', ensureLoggedIn, usersCtrl.remove)
 
 // User put route for updating
 router.put('/update', usersCtrl.update)

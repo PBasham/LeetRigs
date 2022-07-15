@@ -13,13 +13,11 @@ GET http://localhost:3001/api/items
 
 ###
 
-POST http://localhost:3001/api/users
+GET http://localhost:3001/api/users/:id
 Content-Type: application/json
 
 {
-  "name": "Daniel",
-  "email": "daniel@gmail.com",
-  "password": "test"
+  "_id": "62cdcb57f1732c33c706c2ad"
 }
 
 ###
@@ -28,8 +26,8 @@ POST http://localhost:3001/api/users
 Content-Type: application/json
 
 {
-  "name": "Patrick",
-  "email": "patrick@gmail.com",
+  "name": "Marco",
+  "email": "marco@gmail.com",
   "password": "test"
 }
 
@@ -39,11 +37,11 @@ GET http://localhost:3001/api/purchases/mycart/
 
 ###
 
-DELETE http://localhost:3000/api/users/delete
+DELETE http://localhost:3000/api/users/:id
 Content-Type: application/json
 
 {
-  "_id": "62cc53068876811779d27cb0"
+  "userId": "62cd1f2a8ea0c2843ac9adc2"
 }
 
 ###

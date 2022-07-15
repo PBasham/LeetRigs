@@ -3,6 +3,7 @@
 ========================================*/
 import { useState } from "react";
 import * as usersServices from "../../utilities/users-service.js"
+import { logOut } from '../../utilities/users-service'
 
 export default function UserProfileEdit({ user, setUser, setEditState }) {
 
@@ -14,8 +15,10 @@ export default function UserProfileEdit({ user, setUser, setEditState }) {
 
 
 
-    const handleDeleteAccount = () => {
-        usersServices.remove(editCredentials)
+    function handleDeleteAccount() {
+        usersServices.remove()
+        logOut()
+        setUser(null)
     }
 
     const handleUpdateClick = () => {

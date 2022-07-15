@@ -11,8 +11,8 @@ export function login(credentials) {
   return sendRequest(`${BASE_URL}/login`, 'POST', credentials);
 }
 
-export function remove(credentials) {
-  return sendRequest(`${BASE_URL}/delete`, 'DELETE', credentials)
+export function remove(id) {
+  return sendRequest(`${BASE_URL}/${id}`, 'DELETE')
 }
 
 export function update(credentials) {
